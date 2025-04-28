@@ -7,7 +7,6 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    DATABASE_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
@@ -19,7 +18,13 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_APP_NAME: z.string().optional(),
+    NEXT_PUBLIC_APP_DESCRIPTION: z.string().optional(),
+    NEXT_PUBLIC_IOS_APP_STORE_LINK: z.string().url().optional(),
+    NEXT_PUBLIC_ANDROID_PLAY_STORE_LINK: z.string().url().optional(),
+    NEXT_PUBLIC_APP_SCHEME: z.string().optional(),
+    NEXT_PUBLIC_WEBSITE_DOMAIN: z.string().optional(),
+    NEXT_PUBLIC_MAGIC_LINK_EXPIRY: z.string().optional().transform(Number),
   },
 
   /**
@@ -27,9 +32,15 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
-    DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
+    NEXT_PUBLIC_APP_DESCRIPTION: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
+    NEXT_PUBLIC_IOS_APP_STORE_LINK: process.env.NEXT_PUBLIC_IOS_APP_STORE_LINK,
+    NEXT_PUBLIC_ANDROID_PLAY_STORE_LINK:
+      process.env.NEXT_PUBLIC_ANDROID_PLAY_STORE_LINK,
+    NEXT_PUBLIC_APP_SCHEME: process.env.NEXT_PUBLIC_APP_SCHEME,
+    NEXT_PUBLIC_WEBSITE_DOMAIN: process.env.NEXT_PUBLIC_WEBSITE_DOMAIN,
+    NEXT_PUBLIC_MAGIC_LINK_EXPIRY: process.env.NEXT_PUBLIC_MAGIC_LINK_EXPIRY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
