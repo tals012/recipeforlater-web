@@ -7,15 +7,6 @@ import "./src/env.js";
 /** @type {import("next").NextConfig} */
 const config = {
   output: "standalone",
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/recipe/demo",
-        permanent: true,
-      },
-    ];
-  },
   async rewrites() {
     return [
       {
