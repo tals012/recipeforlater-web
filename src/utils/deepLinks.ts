@@ -4,7 +4,7 @@ import { env } from "@/env";
 
 export const generateDeepLink = (path: string, params?: Record<string, string>) => {
   const baseUrl = env.NEXT_PUBLIC_WEBSITE_DOMAIN;
-  const appScheme = env.NEXT_PUBLIC_APP_SCHEME;
+  const appScheme = "recipeforlater"; // Hardcoded scheme for now
   
   // Create web URL
   const webUrl = new URL(path, baseUrl);
@@ -29,4 +29,12 @@ export const generateDeepLink = (path: string, params?: Record<string, string>) 
 
 export const generateMagicLink = (token: string, email: string) => {
   return generateDeepLink("auth/magic-link", { token, email });
+};
+
+export const generateRecipeLink = (id: string) => {
+  return generateDeepLink(`recipe/${id}`);
+};
+
+export const generateResetPasswordLink = (token: string, email: string) => {
+  return generateDeepLink("auth/reset-password", { token, email });
 };

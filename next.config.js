@@ -30,6 +30,14 @@ const config = {
         source: "/recipe/:path*",
         destination: "/recipe/:path*",
       },
+      {
+        source: "/.well-known/apple-app-site-association",
+        destination: "/api/.well-known/apple-app-site-association",
+      },
+      {
+        source: "/.well-known/assetlinks.json",
+        destination: "/api/.well-known/assetlinks.json",
+      },
     ];
   },
   // Ensure trailing slashes are handled consistently
