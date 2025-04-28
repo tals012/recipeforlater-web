@@ -5,6 +5,25 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  output: "standalone",
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/recipe/demo",
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/auth/magic-link",
+        destination: "/auth/magic-link",
+      },
+    ];
+  },
+};
 
 export default config;
