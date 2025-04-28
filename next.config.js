@@ -22,6 +22,10 @@ const config = {
         source: "/auth/magic-link",
         destination: "/auth/magic-link",
       },
+      {
+        source: "/recipe/:path*",
+        destination: "/recipe/:path*",
+      },
     ];
   },
 };
