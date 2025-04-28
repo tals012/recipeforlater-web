@@ -42,6 +42,19 @@ const config = {
       "/recipe/demo": true,
     };
   },
+  // Configure image domains
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.cloudinary.com",
+      },
+    ],
+  },
 };
 
 export default config;
