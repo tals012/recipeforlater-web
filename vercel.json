@@ -5,6 +5,10 @@
       "destination": "/auth/magic-link"
     },
     {
+      "source": "/recipe/demo",
+      "destination": "/recipe/demo"
+    },
+    {
       "source": "/recipe/:path*",
       "destination": "/recipe/:path*"
     }
@@ -27,5 +31,11 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "regions": ["fra1"]
 }

@@ -23,10 +23,25 @@ const config = {
         destination: "/auth/magic-link",
       },
       {
+        source: "/recipe/demo",
+        destination: "/recipe/demo",
+      },
+      {
         source: "/recipe/:path*",
         destination: "/recipe/:path*",
       },
     ];
+  },
+  // Ensure trailing slashes are handled consistently
+  trailingSlash: false,
+  // Ensure we're using the correct base path
+  basePath: "",
+  // Enable static page generation for these routes
+  async generateStaticParams() {
+    return {
+      "/auth/magic-link": true,
+      "/recipe/demo": true,
+    };
   },
 };
 
