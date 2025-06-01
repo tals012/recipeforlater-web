@@ -6,26 +6,56 @@ function GoogleOAuthCallbackContent() {
     const searchParams = useSearchParams();
 
     useEffect(() => {
-        const idToken = searchParams.get('id_token');
+        const code = searchParams.get('code');
+        const error = searchParams.get('error');
 
-        if (idToken) {
-            // Redirect to mobile app
-            const deepLink = `recipeforlater://auth/google-callback?id_token=${idToken}`;
-            window.location.href = deepLink;
+        if (error) {
+            // הפניה לאפליקציה עם שגיאה
+            window.location.href = `recipeforlater://auth/google-callback?error=${error}`;
+        } else if (code) {
+            // הפניה לאפליקציה עם הקוד
+            window.location.href = `recipeforlater://auth/google-callback?code=${code}`;
+        } else {
+            // אין קוד ואין שגיאה
+            window.location.href = `recipeforlater://auth/google-callback?error=no_code`;
         }
     }, [searchParams]);
+
+    const code = searchParams.get('code');
+    const error = searchParams.get('error');
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
             <div className="text-center p-8">
-                <h1 className="text-2xl font-bold mb-4">מעביר אותך לאפליקציה...</h1>
-                <p className="text-gray-600 mb-6">אם האפליקציה לא נפתחת אוטומטית, לחץ כאן:</p>
-                <a
-                    href={`recipeforlater://auth/google-callback?id_token=${searchParams.get('id_token')}`}
-                    className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"
-                >
-                    פתח את האפליקציה
-                </a>
+                <h2 className="text-2xl font-bold mb-4">מתחבר לחשבון Google...</h2>
+                <p className="text-gray-600 mb-6">אנא המתן, אנחנו מעבירים אותך חזרה לאפליקציה</p>
+
+                {error && (
+                    <a
+                        href={`recipeforlater://auth/google-callback?error=${error}`}
+                        className="inline-block bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded transition-colors"
+                    >
+                        חזרה לאפליקציה (שגיאה)
+                    </a>
+                )}
+
+                {code && (
+                    <a
+                        href={`recipeforlater://auth/google-callback?code=${code}`}
+                        className="inline-block bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded transition-colors"
+                    >
+                        חזרה לאפליקציה
+                    </a>
+                )}
+
+                {!code && !error && (
+                    <a
+                        href={`recipeforlater://auth/google-callback?error=no_code`}
+                        className="inline-block bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded transition-colors"
+                    >
+                        חזרה לאפליקציה
+                    </a>
+                )}
             </div>
         </div>
     );
@@ -36,7 +66,7 @@ export default function GoogleOAuthCallback() {
         <Suspense fallback={
             <div className="min-h-screen flex items-center justify-center bg-gray-50">
                 <div className="text-center p-8">
-                    <h1 className="text-2xl font-bold mb-4">טוען...</h1>
+                    <h2 className="text-2xl font-bold mb-4">טוען...</h2>
                 </div>
             </div>
         }>
