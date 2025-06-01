@@ -38,3 +38,7 @@ export const generateRecipeLink = (id: string) => {
 export const generateResetPasswordLink = (token: string, email: string) => {
   return generateDeepLink("auth/reset-password", { token, email });
 };
+
+export const generateGoogleOAuthLink = (idToken: string) => {
+  return `recipeforlater://auth/google-callback?id_token=${idToken}`;
+};
