@@ -4,6 +4,8 @@ import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import { LanguageProvider } from "@/hooks/useLanguage";
+import Footer from "./_components/Footer";
 
 export const metadata: Metadata = {
   title: "RecipeForLater",
@@ -21,8 +23,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable}`}>
-      <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+      <body className="flex flex-col min-h-screen">
+        <TRPCReactProvider>
+          <LanguageProvider>
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </LanguageProvider>
+        </TRPCReactProvider>
       </body>
     </html>
   );
