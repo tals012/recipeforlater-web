@@ -1,13 +1,7 @@
-'use client';
-
-import React from 'react';
-import MarkdownRenderer from '@/utils/markdownRenderer';
-
-const termsOfServiceContent = `
 # Terms of Use for Recipe For Later
 
-**Effective Date:** June 6, 2025
-**Last Updated:** June 6, 2025
+**Effective Date:** June 6, 2025  
+**Last Updated:** June 6, 2025  
 **Version:** 1.0
 
 ## 1. Introduction
@@ -340,10 +334,10 @@ If you have any questions about these Terms, please contact us at:
 
 Email: legal@recipeforlater.com
 
-Postal Address:
-Recipe For Later Legal Team
-123 App Street
-App City, AP 12345
+Postal Address:  
+Recipe For Later Legal Team  
+123 App Street  
+App City, AP 12345  
 United States
 
 ## 20. Special Provisions for Recipe Features
@@ -379,12 +373,3 @@ The App may personalize your experience based on your preferences and usage patt
 - Personalization is provided to enhance your experience
 - Personalization may not always accurately reflect your preferences
 - You can adjust or disable certain personalization features through the App settings
-`;
-
-export default function TermsOfServicePage() {
-    return (
-        <div className="max-w-4xl mx-auto px-4 py-8">
-            <MarkdownRenderer content={termsOfServiceContent} />
-        </div>
-    );
-} 

@@ -1,13 +1,7 @@
-'use client';
-
-import React from 'react';
-import MarkdownRenderer from '@/utils/markdownRenderer';
-
-const privacyPolicyContent = `
 # Privacy Policy for Recipe For Later
 
-**Effective Date:** June 6, 2025
-**Last Updated:** June 6, 2025
+**Effective Date:** June 6, 2025  
+**Last Updated:** June 6, 2025  
 **Version:** 1.0
 
 ## 1. Introduction
@@ -250,10 +244,10 @@ If you have any questions about this Privacy Policy or our data practices, pleas
 
 Email: privacy@recipeforlater.com
 
-Postal Address:
-Recipe For Later Privacy Team
-123 App Street
-App City, AP 12345
+Postal Address:  
+Recipe For Later Privacy Team  
+123 App Street  
+App City, AP 12345  
 United States
 
 For users in the European Union, you have the right to lodge a complaint with your local data protection authority if you are not satisfied with our response to your concerns.
@@ -396,12 +390,3 @@ Our App Store Privacy Nutrition Labels accurately reflect the data we collect an
 - **Processing:** Any operation performed on personal data, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure, dissemination, or otherwise making available.
 - **SDK (Software Development Kit):** A collection of software development tools in one installable package.
 - **User-Generated Content:** Any content created and added to the App by users, such as recipe modifications or notes.
-`;
-
-export default function PrivacyPolicyPage() {
-    return (
-        <div className="max-w-4xl mx-auto px-4 py-8">
-            <MarkdownRenderer content={privacyPolicyContent} />
-        </div>
-    );
-} 
