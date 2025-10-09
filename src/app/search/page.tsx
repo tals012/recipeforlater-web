@@ -71,6 +71,9 @@ export default function SearchPage() {
                 .rfl-cse { display: block; }
                 .rfl-cse #gcse-container { display: block; min-height: 3.5rem; }
                 .rfl-cse .gsc-control-cse { margin: 0 auto !important; max-width: 48rem; }
+                /* Prevent iOS Safari focus zoom by ensuring >=16px font size */
+                .rfl-cse .gsc-input-box { font-size: 16px !important; }
+                .rfl-cse input.gsc-input { font-size: 16px !important; }
             `}</style>
         </div>
     );
