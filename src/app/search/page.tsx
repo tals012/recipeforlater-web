@@ -1,11 +1,56 @@
 'use client';
 
 import React from 'react';
-import Script from 'next/script';
 
 const CSE_ID = '24bca6403c0d04411';
 
 export default function SearchPage() {
+    React.useEffect(() => {
+        const w = window as any;
+        const container = document.getElementById('gcse-container');
+        if (container && !container.querySelector('.gcse-search')) {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'gcse-search';
+            placeholder.setAttribute('data-gname', 'rfl');
+            container.appendChild(placeholder);
+        }
+
+        w.__gcse = w.__gcse || {};
+        w.__gcse.parsetags = 'onload';
+        w.__gcse.callback = () => {
+            try {
+                const googleObj = (window as any).google;
+                if (!googleObj?.search?.cse?.element) return;
+                const params = new URLSearchParams(window.location.search);
+                const q = params.get('q');
+                const el = googleObj.search.cse.element.getElement('rfl')
+                    || (googleObj.search.cse.element.getAllElements && googleObj.search.cse.element.getAllElements()[0]);
+                if (q && el && el.execute) {
+                    el.execute(q);
+                }
+                // Fallback: if auto-parse missed, render explicitly
+                const hasAny = googleObj.search.cse.element.getAllElements && googleObj.search.cse.element.getAllElements().length > 0;
+                if (!hasAny) {
+                    googleObj.search.cse.element.render(
+                        { div: 'gcse-container', tag: 'search' },
+                        { gname: 'rfl' }
+                    );
+                }
+            } catch { }
+        };
+
+        if (!document.getElementById('gcse-script')) {
+            const script = document.createElement('script');
+            script.id = 'gcse-script';
+            script.src = `https://cse.google.com/cse.js?cx=${CSE_ID}&hl=en`;
+            script.async = true;
+            document.body.appendChild(script);
+        } else {
+            // If already present (Fast Refresh), trigger callback on next tick
+            setTimeout(() => w.__gcse && w.__gcse.callback && w.__gcse.callback(), 0);
+        }
+    }, []);
+
     return (
         <div className="max-w-5xl mx-auto px-4 py-8">
             <div className="text-center mb-6">
@@ -18,125 +63,14 @@ export default function SearchPage() {
                     Search for a recipe and import it
                 </h1>
             </div>
-            <Script
-                id="google-cse"
-                src={`https://cse.google.com/cse.js?cx=${CSE_ID}`}
-                strategy="afterInteractive"
-                onLoad={() => {
-                    const executeQueryIfPresent = () => {
-                        const params = new URLSearchParams(window.location.search);
-                        const q = params.get('q');
-                        const googleObj = (window as any).google;
-                        if (!q || !googleObj || !googleObj.search || !googleObj.search.cse || !googleObj.search.cse.element) return false;
-                        const el = googleObj.search.cse.element.getElement('standard0');
-                        if (!el) return false;
-                        el.execute(q);
-                        return true;
-                    };
-                    if (executeQueryIfPresent()) return;
-                    const start = Date.now();
-                    const timer = setInterval(() => {
-                        if (executeQueryIfPresent() || Date.now() - start > 3000) {
-                            clearInterval(timer);
-                        }
-                    }, 100);
-                }}
-            />
-            <div className="rfl-cse">
-                <div className="gcse-search" />
+            <div className="rfl-cse" suppressHydrationWarning>
+                <div id="gcse-container" style={{ minHeight: '3.5rem' }} />
             </div>
             <style jsx global>{`
-                /* Scope all overrides under our wrapper to avoid bleeding */
-                .rfl-cse .gsc-control-cse {
-                    background: transparent !important;
-                    border: none !important;
-                    padding: 0 !important;
-                    margin: 0 auto !important;
-                    max-width: 48rem; /* ~768px */
-                }
-
-                .rfl-cse .gsc-search-box-tools .gsc-search-box .gsc-input {
-                    padding: 0 !important;
-                }
-                .rfl-cse .gsc-input-box {
-                    border-radius: 0.75rem !important; /* rounded-xl */
-                    border: 1px solid #e5e7eb !important; /* gray-200 */
-                    box-shadow: none !important;
-                    background: #ffffff !important;
-                }
-                .rfl-cse input.gsc-input {
-                    padding: 0.75rem 1rem !important; /* py-3 px-4 */
-                    height: 3rem !important;
-                    line-height: 1.5rem !important;
-                    color: #111827 !important; /* gray-900 */
-                    background: transparent !important;
-                }
-                .rfl-cse input.gsc-input:focus {
-                    outline: none !important;
-                }
-                /* focus ring */
-                .rfl-cse .gsc-input-box:focus-within {
-                    border-color: #2e026d !important;
-                    box-shadow: 0 0 0 3px rgba(46, 2, 109, 0.25) !important;
-                }
-
-                /* Search button */
-                .rfl-cse .gsc-search-button-v2,
-                .rfl-cse .gsc-search-button-v2:hover,
-                .rfl-cse .gsc-search-button-v2:focus {
-                    background-color: #2e026d !important;
-                    border-color: #2e026d !important;
-                    border-radius: 0.75rem !important;
-                    height: 3rem !important;
-                    padding: 0 1rem !important;
-                }
-                .rfl-cse .gsc-search-button-v2 svg,
-                .rfl-cse .gsc-search-button-v2 .gsc-search-button-v2-icon {
-                    filter: brightness(0) invert(1);
-                }
-
-                /* Results container centering */
-                .rfl-cse .gsc-results-wrapper-overlay,
-                .rfl-cse .gsc-results-wrapper-visible,
-                .rfl-cse .gsc-wrapper {
-                    margin-left: auto !important;
-                    margin-right: auto !important;
-                    max-width: 48rem !important;
-                }
-
-                /* Result cards */
-                .rfl-cse .gsc-webResult.gsc-result,
-                .rfl-cse .gsc-imageResult {
-                    border: 1px solid #e5e7eb !important; /* gray-200 */
-                    border-radius: 0.75rem !important;
-                    padding: 1rem !important;
-                    background: #ffffff !important;
-                }
-                .rfl-cse .gs-title a {
-                    color: #2e026d !important; /* brand purple */
-                }
-                .rfl-cse .gs-title a:hover {
-                    text-decoration: underline !important;
-                }
-                .rfl-cse .gsc-url-top,
-                .rfl-cse .gsc-url-bottom {
-                    color: #6b7280 !important; /* gray-500 */
-                }
-
-                /* Pagination */
-                .rfl-cse .gsc-cursor-box {
-                    display: flex !important;
-                    justify-content: center !important;
-                    gap: 0.5rem !important;
-                }
-                .rfl-cse .gsc-cursor-page {
-                    padding: 0.25rem 0.5rem !important;
-                    border-radius: 0.375rem !important;
-                }
-                .rfl-cse .gsc-cursor-current-page {
-                    background: #2e026d !important;
-                    color: white !important;
-                }
+                /* Minimal, non-intrusive styles to avoid hiding the widget */
+                .rfl-cse { display: block; }
+                .rfl-cse #gcse-container { display: block; min-height: 3.5rem; }
+                .rfl-cse .gsc-control-cse { margin: 0 auto !important; max-width: 48rem; }
             `}</style>
         </div>
     );
