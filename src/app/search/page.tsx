@@ -54,11 +54,19 @@ export default function SearchPage() {
     return (
         <div className="max-w-5xl mx-auto px-4 py-8">
             <div className="text-center mb-6">
-                <img
-                    src="/rfl.jpg"
-                    alt="Recipe For Later logo"
-                    className="mx-auto h-16 w-auto rounded"
-                />
+                <div className="flex items-center justify-center gap-4">
+                    <img
+                        src="/rfl.jpg"
+                        alt="Recipe For Later logo"
+                        className="h-16 w-auto rounded"
+                    />
+                    <img
+                        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                        alt="Google logo"
+                        className="h-8 w-auto"
+                        referrerPolicy="no-referrer"
+                    />
+                </div>
                 <h1 className="mt-4 text-2xl font-semibold">
                     Search for a recipe and import it
                 </h1>
@@ -74,6 +82,13 @@ export default function SearchPage() {
                 /* Prevent iOS Safari focus zoom by ensuring >=16px font size */
                 .rfl-cse .gsc-input-box { font-size: 16px !important; }
                 .rfl-cse input.gsc-input { font-size: 16px !important; }
+                /* Ensure input text and placeholder are visible */
+                .rfl-cse input.gsc-input,
+                .rfl-cse .gsc-input-box input,
+                .rfl-cse .gsib_a input { color: #111827 !important; -webkit-text-fill-color: #111827 !important; caret-color: #111827 !important; }
+                .rfl-cse input.gsc-input::placeholder,
+                .rfl-cse .gsc-input-box input::placeholder,
+                .rfl-cse .gsib_a input::placeholder { color: #6b7280 !important; opacity: 1 !important; }
             `}</style>
         </div>
     );
