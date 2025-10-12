@@ -10,6 +10,7 @@ export async function GET() {
             appID: "YZMN2BRBCL.com.talshukrun.recipeforlater", // Team ID + Bundle ID
             paths: [
               "/recipe/*",
+              "/collection/*",
               "/auth/magic-login",
               "/auth/reset-password",
               "NOT /api/*",

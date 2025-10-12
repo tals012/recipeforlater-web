@@ -35,6 +35,11 @@ export const generateRecipeLink = (id: string) => {
   return generateDeepLink(`recipe/${id}`);
 };
 
+export const generateCollectionLink = (collectionId: string, invite?: boolean) => {
+  const params = invite ? { invite: "true" } : undefined;
+  return generateDeepLink(`collection/${collectionId}`, params);
+};
+
 export const generateResetPasswordLink = (token: string, email: string) => {
   return generateDeepLink("auth/reset-password", { token, email });
 };

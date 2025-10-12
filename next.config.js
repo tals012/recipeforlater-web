@@ -22,6 +22,10 @@ const config = {
         destination: "/recipe/:path*",
       },
       {
+        source: "/collection/:path*",
+        destination: "/collection/:path*",
+      },
+      {
         source: "/.well-known/apple-app-site-association",
         destination: "/api/.well-known/apple-app-site-association",
       },
