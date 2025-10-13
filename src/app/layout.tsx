@@ -4,7 +4,6 @@ import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
-import { LanguageProvider } from "@/hooks/useLanguage";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 
@@ -26,13 +25,11 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable}`}>
       <body className="flex flex-col min-h-screen">
         <TRPCReactProvider>
-          <LanguageProvider>
-            <Header />
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </LanguageProvider>
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
         </TRPCReactProvider>
       </body>
     </html>

@@ -21,7 +21,7 @@ function MagicLinkContent() {
     }, [token, email]);
 
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+        <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
             <h1 className="text-2xl font-bold mb-4">Processing magic link...</h1>
             {token && email ? (
                 <p className="text-lg">Redirecting to app...</p>
@@ -35,7 +35,7 @@ function MagicLinkContent() {
 export default function MagicLinkPage() {
     return (
         <Suspense fallback={
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
                 <h1 className="text-2xl font-bold">Loading...</h1>
             </div>
         }>
