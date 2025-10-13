@@ -8,7 +8,7 @@ function RecipeDemoContent() {
     const recipeId = searchParams.get("id");
 
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+        <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
             <h1 className="text-4xl font-bold mb-8">Recipe Demo</h1>
             {recipeId ? (
                 <div className="text-xl">
@@ -26,7 +26,7 @@ function RecipeDemoContent() {
 export default function RecipeDemoPage() {
     return (
         <Suspense fallback={
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
                 <h1 className="text-2xl font-bold">Loading...</h1>
             </div>
         }>

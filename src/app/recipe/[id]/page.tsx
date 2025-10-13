@@ -75,7 +75,7 @@ function RecipeContent() {
 
     if (loading) {
         return (
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
                 <h1 className="text-2xl font-bold">Loading recipe...</h1>
             </div>
         );
@@ -83,14 +83,14 @@ function RecipeContent() {
 
     if (!recipe) {
         return (
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
                 <h1 className="text-2xl font-bold">Recipe not found</h1>
             </div>
         );
     }
 
     return (
-        <div className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+        <div className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
             <div className="w-full max-w-2xl p-6 space-y-6">
                 {recipe.imageUrl && (
                     <div className="relative w-full h-64 overflow-hidden rounded-lg">
@@ -118,13 +118,13 @@ function RecipeContent() {
 
                 <div className="mt-8 space-y-4">
                     {redirecting ? (
-                        <div className="p-4 bg-green-800 bg-opacity-50 rounded-lg">
+                        <div className="p-4 bg-brand-primary bg-opacity-10 text-brand-primary rounded-lg">
                             <p className="text-lg font-medium">Redirecting to RecipeForLater app...</p>
                         </div>
                     ) : (
                         <button
                             onClick={handleOpenInApp}
-                            className="w-full py-3 px-4 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition"
+                            className="w-full py-3 px-4 bg-brand-primary text-white rounded-lg font-medium hover:bg-brand-primaryDark transition"
                         >
                             Open in RecipeForLater app
                         </button>
@@ -135,13 +135,13 @@ function RecipeContent() {
                         <div className="grid grid-cols-2 gap-4">
                             <button
                                 onClick={() => handleDownloadApp('ios')}
-                                className="py-3 px-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
+                                className="py-3 px-4 bg-brand-primary text-white rounded-lg font-medium hover:bg-brand-primaryDark transition"
                             >
                                 App Store
                             </button>
                             <button
                                 onClick={() => handleDownloadApp('android')}
-                                className="py-3 px-4 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition"
+                                className="py-3 px-4 bg-brand-primary text-white rounded-lg font-medium hover:bg-brand-primaryDark transition"
                             >
                                 Google Play
                             </button>
