@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
 import { LanguageProvider } from "@/hooks/useLanguage";
 import Footer from "./_components/Footer";
+import Header from "./_components/Header";
 
 export const metadata: Metadata = {
   title: "RecipeForLater",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="flex flex-col min-h-screen">
         <TRPCReactProvider>
           <LanguageProvider>
+            <Header />
             <main className="flex-1">
               {children}
             </main>
