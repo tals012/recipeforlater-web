@@ -6,10 +6,6 @@ import MarkdownRenderer from '@/utils/markdownRenderer';
 const privacyPolicyContent = `
 # Privacy Policy for Recipe For Later
 
-**Effective Date:** June 6, 2025
-**Last Updated:** June 6, 2025
-**Version:** 1.0
-
 ## 1. Introduction
 
 Welcome to Recipe For Later. We are committed to protecting your privacy and ensuring you have a positive experience when using our application.

@@ -6,8 +6,6 @@ import MarkdownRenderer from '@/utils/markdownRenderer';
 const termsOfServiceContent = `
 # Terms of Use for Recipe For Later
 
-**Effective Date:** June 6, 2025
-**Last Updated:** June 6, 2025
 **Version:** 1.0
 
 ## 1. Introduction
