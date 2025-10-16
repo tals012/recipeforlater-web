@@ -21,6 +21,8 @@
     "@trpc/client": "^11.0.0-next-beta.264",
     "@trpc/react-query": "^11.0.0-next-beta.264",
     "@trpc/server": "^11.0.0-next-beta.264",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.545.0",
     "next": "14.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
