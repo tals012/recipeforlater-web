@@ -8,8 +8,8 @@ export function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f4e2] px-[60px] pt-24 pb-8">
-      <div className="relative mx-auto flex max-w-[1440px] flex-row-reverse items-center gap-[60px]">
+    <section className="relative overflow-hidden bg-[#f7f4e2] px-4 pt-24 pb-12 md:px-[60px] md:pt-32 md:pb-8">
+      <div className="relative mx-auto flex max-w-[1440px] flex-col items-center gap-8 md:flex-row-reverse md:gap-[60px]">
         {/* Left Content */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
@@ -175,14 +175,13 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.3 }}
           className="relative flex-1"
         >
-          <div className="relative h-[700px] w-full flex items-end justify-center overflow-hidden pb-0"
+          <div className="relative h-[700px] w-full flex items-end justify-center pb-0"
             style={{
-              clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 calc(100% - 80px))",
               marginBottom: "-112px"
             }}
           >
-            {/* Center iPhone with thin bezel (no notch) */}
-            <div className="relative z-30 mb-0 h-[650px] w-[305px] rounded-[38px] border-[3px] border-[#0a0a0a] bg-[#0a0a0a]">
+            {/* Center iPhone - video with frame */}
+            <div className="relative z-30 mb-0 h-[650px] w-auto">
               {/* Aura */}
               <div
                 className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -196,17 +195,20 @@ export function Hero() {
                   zIndex: -1,
                 }}
               />
-              {/* Screen */}
-              <div className="relative h-full w-full overflow-hidden rounded-[35px] ">
-                <VideoAutoPlay
-                  poster="/assets/hero-screen-center.png"
-                  sources={[
-                    { src: "/_videos/v1/main.webm", type: "video/webm" },
-                    { src: "/_videos/v1/hero_new.mp4", type: "video/mp4" },
-                    { src: "/_videos/v1/hero_new.mp4", type: "video/mp4" },
-                  ]}
-                />
-              </div>
+              {/* Video with built-in frame */}
+              <video
+                autoPlay
+                muted
+                playsInline
+                loop
+                preload="auto"
+                poster="/assets/hero-screen-center.png"
+                onError={(e) => console.error("Video error:", e)}
+                className="h-full w-auto object-contain"
+              >
+                <source src="/_videos/v1/hero_video_new1.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
             </div>
 
             {/* Left iPhone - rotated */}
@@ -328,7 +330,7 @@ function VideoAutoPlay({
       loop
       preload="metadata"
       poster={poster}
-      className="absolute inset-0 h-full w-full rounded-[35px] object-cover"
+      className="h-full w-full object-contain"
     >
       {sources.map((s) => (
         <source key={s.src} src={s.src} type={s.type} />

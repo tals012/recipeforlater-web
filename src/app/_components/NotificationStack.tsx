@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const notifications = [
     {
         user: "Jack",
-        recipe: "Brownies au chocolat",
+        recipe: "Roasted Eggplant Rolls",
         delay: 0,
     },
     {
