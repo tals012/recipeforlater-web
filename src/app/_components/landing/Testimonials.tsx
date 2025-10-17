@@ -57,7 +57,7 @@ export function Testimonials() {
           className="mb-16 text-center"
         >
           <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
-            Loved By Home Cooks Everywhere
+            <span className="text-[#e74c3c]">Loved</span> By Home Cooks Everywhere
           </h2>
           <p className="font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
             Join thousands who've organized their cooking life
@@ -72,28 +72,8 @@ export function Testimonials() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mx-auto max-w-[1200px]"
         >
-          <div className="grid grid-cols-[400px_1fr] gap-8 rounded-3xl bg-gradient-to-br from-[#f7f4e2] to-white p-12 shadow-xl">
-            {/* Left - Image */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
-                className="relative"
-              >
-                <div className="h-[394px] w-[394px] overflow-hidden rounded-3xl bg-gradient-to-br from-[#177654] to-[#0f5239] shadow-2xl">
-                  <div className="flex h-full items-center justify-center">
-                    <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                      <span className="text-6xl">👤</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Right - Content */}
+          <div className="rounded-3xl bg-gradient-to-br from-[#f7f4e2] to-white p-12 shadow-xl">
+            {/* Content */}
             <div className="flex flex-col justify-between py-8">
               <div>
                 {/* Stars */}

@@ -101,7 +101,7 @@ const HeroSection = () => {
                         </div>
                         <div className="flex items-center gap-3">
                             <img src="/assets/app-store.svg" alt="Download on App Store" className="h-10" />
-                            <img src="/assets/google-play.svg" alt="Get it on Google Play" className="h-10" />
+                            <img src="/assets/google_store.png" alt="Get it on Google Play" className="h-10" />
                         </div>
                     </div>
                 </motion.div>

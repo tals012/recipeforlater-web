@@ -48,7 +48,7 @@ export function Features() {
           className="mb-[60px] text-center"
         >
           <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
-            Your Kitchen Deserves Better
+            Your Kitchen Deserves <span className="text-[#e74c3c]">Better</span>
           </h2>
           <p className="mx-auto max-w-[900px] font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
             You save recipes everywhere, Instagram, TikTok, screenshots, notes, but when it's time

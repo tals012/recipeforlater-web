@@ -105,7 +105,7 @@ export function PricingComparison() {
           className="mb-16 text-center"
         >
           <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
-            Why RecipeForLater Wins
+            Why RecipeForLater <span className="text-[#e74c3c]">Wins</span>
           </h2>
           <p className="font-['Oswald'] text-2xl font-normal leading-[1.2] text-[#4f4d55]">
             How We're Different from the Competition

@@ -2,13 +2,12 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    phone: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,32 +17,35 @@ export function Contact() {
   };
 
   return (
-    <section className="bg-white px-[120px] py-20">
+    <section className="bg-[#f7f4e2] px-[120px] py-20">
       <div className="mx-auto max-w-[1440px]">
-        <div className="grid grid-cols-[520px_1fr] items-center gap-20">
+        <div className="flex items-center gap-[160px]">
           {/* Left - Form */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="flex flex-1 flex-col gap-12"
           >
+            {/* Header */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-10"
+              className="flex flex-col gap-3"
             >
-              <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
-                Get in touch with us
+              <h2 className="font-['Oswald'] text-[48px] font-semibold leading-[1.2] tracking-[-1.44px] text-[#0a090b]">
+                Get in <span className="text-[#e74c3c]">touch</span> with us
               </h2>
-              <p className="font-['Oswald'] text-xl font-normal leading-[1.2] text-[#4f4d55]">
-                Have questions? We'd love to hear from you.
+              <p className="font-['Oswald'] text-[24px] font-normal leading-[22px] tracking-[-0.18px] text-[#4f4d55]">
+                Let us know if there is anything we can do for you
               </p>
             </motion.div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -52,10 +54,10 @@ export function Contact() {
               >
                 <input
                   type="text"
-                  placeholder="Your name"
+                  placeholder="Enter name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full rounded-lg border border-[#ececed] bg-white px-4 py-3 font-['Oswald'] text-base text-[#0a090b] transition-all focus:border-[#177654] focus:outline-none focus:ring-2 focus:ring-[#177654]/20"
+                  className="h-10 w-full rounded-lg border border-[#e6e6e6] bg-white px-3 font-['Inter'] text-[14px] font-normal leading-[20px] tracking-[-0.05px] text-[#0a090b] placeholder:text-[#7f7d83] transition-all focus:border-[#177654] focus:outline-none focus:ring-2 focus:ring-[#177654]/20"
                 />
               </motion.div>
 
@@ -67,10 +69,10 @@ export function Contact() {
               >
                 <input
                   type="email"
-                  placeholder="Your email"
+                  placeholder="Enter email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full rounded-lg border border-[#ececed] bg-white px-4 py-3 font-['Oswald'] text-base text-[#0a090b] transition-all focus:border-[#177654] focus:outline-none focus:ring-2 focus:ring-[#177654]/20"
+                  className="h-10 w-full rounded-lg border border-[#e6e6e6] bg-white px-3 font-['Inter'] text-[14px] font-normal leading-[20px] tracking-[-0.05px] text-[#0a090b] placeholder:text-[#7f7d83] transition-all focus:border-[#177654] focus:outline-none focus:ring-2 focus:ring-[#177654]/20"
                 />
               </motion.div>
 
@@ -79,13 +81,17 @@ export function Contact() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
+                className="flex flex-col gap-1.5"
               >
+                <label className="font-['Inter'] text-[14px] font-[475] leading-[20px] tracking-[-0.05px] text-[#2d2b32]">
+                  Message
+                </label>
                 <textarea
-                  placeholder="Your message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Enter your message"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   rows={4}
-                  className="w-full resize-none rounded-lg border border-[#ececed] bg-white px-4 py-3 font-['Oswald'] text-base text-[#0a090b] transition-all focus:border-[#177654] focus:outline-none focus:ring-2 focus:ring-[#177654]/20"
+                  className="w-full resize-none rounded-lg border border-[#e6e6e6] bg-white px-3 py-2 font-['Inter'] text-[14px] font-normal leading-[20px] tracking-[-0.05px] text-[#0a090b] placeholder:text-[#7f7d83] transition-all focus:border-[#177654] focus:outline-none focus:ring-2 focus:ring-[#177654]/20"
                 />
               </motion.div>
 
@@ -97,10 +103,9 @@ export function Contact() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#177654] px-4 py-3 font-['Oswald'] text-base font-semibold text-white shadow-lg transition-all hover:bg-[#145d45]"
+                className="flex h-10 w-full items-center justify-center rounded-lg bg-[#177654] px-3.5 font-['Inter'] text-[14px] font-[550] leading-[20px] tracking-[-0.02px] text-white transition-all hover:bg-[#145d45]"
               >
-                Send Message
-                <Send className="h-5 w-5" />
+                Contact us
               </motion.button>
             </form>
           </motion.div>
@@ -111,26 +116,15 @@ export function Contact() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex justify-center"
+            className="flex flex-1 items-end justify-center"
           >
-            <motion.div
-              animate={{
-                y: [0, -15, 0],
-                rotate: [-1, 1, -1],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative"
-            >
-              <div className="h-[700px] w-[345px] overflow-hidden rounded-[40px] bg-white shadow-2xl">
-                <div className="h-full w-full bg-gradient-to-br from-[#177654] to-[#0f5239] p-4">
-                  <div className="h-full w-full rounded-[32px] bg-white/10 backdrop-blur-sm" />
-                </div>
-              </div>
-            </motion.div>
+            <div className="relative w-[412px] mb-[-98px]">
+              <img
+                src="/assets/stop_losing.png"
+                alt="Recipe App Demo"
+                className="h-auto w-full object-contain"
+              />
+            </div>
           </motion.div>
         </div>
       </div>

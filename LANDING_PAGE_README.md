@@ -3,6 +3,7 @@
 ## Overview
 
 This is a pixel-perfect, fully animated landing page built from your Figma design using:
+
 - **Next.js 14** (App Router)
 - **Tailwind CSS** for styling
 - **Framer Motion** for animations
@@ -12,6 +13,7 @@ This is a pixel-perfect, fully animated landing page built from your Figma desig
 ## Features
 
 ### ✨ Animations
+
 - **Smooth scroll animations** - Elements fade and slide in as you scroll
 - **Hover effects** - Cards lift and scale on hover
 - **Parallax effects** - Phone mockups float and rotate subtly
@@ -20,7 +22,9 @@ This is a pixel-perfect, fully animated landing page built from your Figma desig
 - **Staggered reveals** - Elements appear one after another for visual flow
 
 ### 🎨 Design System
+
 - **Colors from Figma:**
+
   - Primary: `#177654` (green)
   - Accent: `#f9bd23` (gold)
   - Background: `#f7f4e2` (cream)
@@ -48,6 +52,7 @@ This is a pixel-perfect, fully animated landing page built from your Figma desig
 ## Setup
 
 All dependencies are already installed:
+
 ```json
 {
   "framer-motion": "^12.23.24",
@@ -62,12 +67,14 @@ All dependencies are already installed:
 Replace these placeholder paths with your actual assets:
 
 **Images:**
+
 - `/app-store.svg` - App Store download badge
-- `/google-play.svg` - Google Play download badge
+- `/google_store.png` - Google Play download badge
 - `/feature-1.jpg`, `/feature-2.jpg` - Feature section images
 - `/testimonial-1.jpg`, `/testimonial-2.jpg`, `/testimonial-3.jpg` - Testimonial avatars
 
 **Videos:**
+
 - `/hero-video.mp4` - Hero section phone video
 - `/cta-video.mp4` - CTA section phone video
 
@@ -76,10 +83,12 @@ Replace these placeholder paths with your actual assets:
 All colors are defined using Tailwind classes. To change the theme:
 
 1. **Primary Green** (`#177654`):
+
    - Find: `bg-[#177654]`, `text-[#177654]`, `border-[#177654]`
    - Replace with your color
 
 2. **Accent Gold** (`#f9bd23`):
+
    - Find: `bg-[#f9bd23]`, `text-[#f9bd23]`, `border-[#f9bd23]`
    - Replace with your color
 
@@ -122,6 +131,7 @@ transition={{ delay: 0.5 }} // wait 0.5s before animating
 The following design variables are used throughout:
 
 ### Colors
+
 - `Global/Neutral Grey/1000`: `#4F4D55`
 - `Global/Base/White`: `#FFFFFF`
 - `Global/Neutral Grey/1300`: `#0A090B`
@@ -131,6 +141,7 @@ The following design variables are used throughout:
 - `Background color/primary`: `#ffffff`
 
 ### Typography
+
 - `Medium/14`: Inter Regular, 14px, weight 475, line-height 20px
 - `Semibold/20`: Inter Semi Bold, 20px, weight 600, line-height 1.2
 - `Regular/16`: Inter Regular, 16px, weight 400, line-height 22px
@@ -139,15 +150,18 @@ The following design variables are used throughout:
 ## Performance Optimizations
 
 ### Images
+
 - Use Next.js `<Image>` component for automatic optimization
 - Replace placeholder images with WebP format for smaller file sizes
 - Add proper alt text for accessibility
 
 ### Fonts
+
 - Fonts are loaded from Google Fonts with `display=swap`
 - Consider self-hosting fonts for better performance
 
 ### Animations
+
 - Uses `will-change` CSS property automatically via Framer Motion
 - `AnimatePresence` for smooth unmounting
 - `viewport={{ once: true }}` to prevent re-animating on scroll
@@ -189,6 +203,7 @@ npm run lint:fix
 ## Deployment
 
 This landing page is ready to deploy to:
+
 - Vercel (recommended for Next.js)
 - Netlify
 - AWS Amplify
@@ -197,6 +212,7 @@ This landing page is ready to deploy to:
 ## Support
 
 For questions or issues, contact your development team or refer to:
+
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Framer Motion Documentation](https://www.framer.com/motion/)
@@ -204,4 +220,3 @@ For questions or issues, contact your development team or refer to:
 ---
 
 Built with ❤️ using your Figma design
-

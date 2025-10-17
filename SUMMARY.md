@@ -30,6 +30,7 @@ I've created a **pixel-perfect, fully animated landing page** based on your Figm
 ### 🎨 Design Fidelity
 
 - **Exact colors from Figma:**
+
   - `#177654` (primary green)
   - `#f9bd23` (accent gold)
   - `#f7f4e2` (background cream)
@@ -37,6 +38,7 @@ I've created a **pixel-perfect, fully animated landing page** based on your Figm
   - `#4f4d55` (gray text)
 
 - **Typography:**
+
   - Oswald (headings & body)
   - Inter (UI elements)
   - Exact font weights and sizes from Figma
@@ -86,8 +88,9 @@ Then open: `http://localhost:3000`
 ### 2. Add Your Assets
 
 Replace these placeholders in `/public/`:
+
 - `app-store.svg` - App Store badge
-- `google-play.svg` - Google Play badge
+- `google_store.png` - Google Play badge
 - `hero-video.mp4` - Hero section video
 - `cta-video.mp4` - CTA section video
 - Feature images and testimonial photos
@@ -95,6 +98,7 @@ Replace these placeholders in `/public/`:
 ### 3. Customize Content
 
 See **CUSTOMIZATION_GUIDE.md** for:
+
 - Changing colors
 - Updating text
 - Modifying animations
@@ -104,18 +108,22 @@ See **CUSTOMIZATION_GUIDE.md** for:
 ## 🎯 Quick Customizations
 
 ### Change Primary Color
+
 ```bash
 # Find/Replace across all files:
 #177654 → #YOUR_COLOR
 ```
 
 ### Update Hero Text
+
 Edit `src/app/_components/landing/Hero.tsx` lines 30-52
 
 ### Modify Pricing
+
 Edit `src/app/_components/landing/SimplePricing.tsx` lines 8-32
 
 ### Add FAQ Items
+
 Edit `src/app/_components/landing/FAQ.tsx` lines 7-52
 
 ## ✅ What's Working
@@ -132,6 +140,7 @@ Edit `src/app/_components/landing/FAQ.tsx` lines 7-52
 ## ⚠️ Next Steps
 
 ### Required
+
 1. **Add real images** - Replace gradient placeholders
 2. **Add real videos** - Replace video sources
 3. **Connect contact form** - Hook up to your backend API
@@ -139,6 +148,7 @@ Edit `src/app/_components/landing/FAQ.tsx` lines 7-52
 5. **Test on devices** - Check mobile/tablet rendering
 
 ### Optional
+
 6. **Add analytics** - Google Analytics or similar
 7. **Optimize images** - Convert to WebP format
 8. **Add more content** - Expand sections as needed
@@ -148,6 +158,7 @@ Edit `src/app/_components/landing/FAQ.tsx` lines 7-52
 ## 📊 Performance
 
 Current state:
+
 - ✅ Framer Motion (already installed)
 - ✅ Optimized animations (GPU-accelerated)
 - ✅ Lazy loading (viewport triggers)
@@ -160,12 +171,14 @@ Current state:
 All Figma variables are implemented:
 
 **Colors:**
+
 - Global/Neutral Grey/1000: `#4F4D55`
 - Global/Neutral Grey/1300: `#0A090B`
 - Global/Green/300: `#C1F4D4`
 - Global/Base/White: `#FFFFFF`
 
 **Typography:**
+
 - Medium/14: Inter Regular, 14px, 475 weight
 - Semibold/20: Inter Semi Bold, 20px, 600 weight
 - Regular/16: Inter Regular, 16px, 400 weight
@@ -175,11 +188,13 @@ All Figma variables are implemented:
 Three comprehensive guides included:
 
 1. **LANDING_PAGE_README.md**
+
    - Complete overview
    - Setup instructions
    - Deployment guide
 
 2. **CUSTOMIZATION_GUIDE.md**
+
    - Common customizations
    - Code examples
    - Quick wins
@@ -202,6 +217,7 @@ Three comprehensive guides included:
 ### Common Tasks:
 
 **Change animation speed:**
+
 ```tsx
 transition={{ duration: 0.6 }}  // Current
 transition={{ duration: 1.2 }}  // Slower (more dramatic)
@@ -209,12 +225,14 @@ transition={{ duration: 0.3 }}  // Faster (snappier)
 ```
 
 **Disable animation on mobile:**
+
 ```tsx
 const isMobile = window.innerWidth < 768;
 animate={isMobile ? {} : { y: -20 }}
 ```
 
 **Add new section:**
+
 1. Create component in `landing/` folder
 2. Import in `NewLandingPage.tsx`
 3. Add between existing sections
@@ -230,6 +248,7 @@ animate={isMobile ? {} : { y: -20 }}
 ## 🎯 Success Metrics
 
 Track these after launch:
+
 - Time on page
 - Scroll depth
 - Button click-through rates
@@ -240,6 +259,7 @@ Track these after launch:
 ## 📞 Support
 
 If you need help:
+
 1. Check **CUSTOMIZATION_GUIDE.md** for common tasks
 2. Check **ANIMATIONS_REFERENCE.md** for animation issues
 3. Check component files (fully commented)
@@ -251,6 +271,7 @@ If you need help:
 Everything is set up and ready to go. Just add your real content and assets, and you'll have a beautiful, high-performing landing page!
 
 ### Quick Start Checklist:
+
 - [ ] Run `npm run dev` to view the page
 - [ ] Add your logo to Header
 - [ ] Replace gradient placeholders with real images
@@ -265,4 +286,3 @@ Everything is set up and ready to go. Just add your real content and assets, and
 **Built with care using your Figma design** ✨
 
 Questions? Everything is documented and commented!
-

@@ -57,7 +57,7 @@ export function FAQ() {
           className="mb-16 text-center"
         >
           <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
-            Frequently Asked Questions
+            Frequently Asked <span className="text-[#e74c3c]">Questions</span>
           </h2>
           <p className="font-['Oswald'] text-xl font-normal leading-[1.2] text-[#4f4d55]">
             Everything you need to know about RecipeForLater

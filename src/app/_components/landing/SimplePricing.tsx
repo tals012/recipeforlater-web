@@ -33,6 +33,8 @@ const plans = [
 ];
 
 export function SimplePricing() {
+  return null;
+
   return (
     <section className="bg-[#fffef9] px-[120px] py-20">
       <div className="mx-auto max-w-[1440px]">
@@ -118,8 +120,8 @@ export function SimplePricing() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 font-['Oswald'] text-base font-semibold transition-all ${plan.popular
-                    ? "bg-[#177654] text-white shadow-lg hover:bg-[#145d45]"
-                    : "border-2 border-[#177654] text-[#177654] hover:bg-[#177654] hover:text-white"
+                  ? "bg-[#177654] text-white shadow-lg hover:bg-[#145d45]"
+                  : "border-2 border-[#177654] text-[#177654] hover:bg-[#177654] hover:text-white"
                   }`}
               >
                 Get Started

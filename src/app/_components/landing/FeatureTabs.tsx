@@ -122,7 +122,7 @@ export function FeatureTabs() {
           className="mb-16 text-center"
         >
           <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
-            Core Features (Detailed)
+            Core <span className="text-[#e74c3c]">Features</span> (Detailed)
           </h2>
           <p className="mx-auto max-w-[900px] font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
             Your all-in-one solution for saving and cooking recipes

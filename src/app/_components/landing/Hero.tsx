@@ -8,7 +8,7 @@ export function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f4e2] px-[60px] pt-3">
+    <section className="relative overflow-hidden bg-[#f7f4e2] px-[60px] pt-24 pb-8">
       <div className="relative mx-auto flex max-w-[1440px] flex-row-reverse items-center gap-[60px]">
         {/* Left Content */}
         <motion.div
@@ -159,7 +159,7 @@ export function Hero() {
                 className="h-10 w-[138px] cursor-pointer"
               >
                 <img
-                  src="/assets/google-play.svg"
+                  src="/assets/google_store.png"
                   alt="Get it on Google Play"
                   className="h-full w-full object-contain"
                 />
@@ -173,13 +173,31 @@ export function Hero() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="relative  flex-1"
+          className="relative flex-1"
         >
-          <div className="relative h-[700px] w-full">
+          <div className="relative h-[700px] w-full flex items-end justify-center overflow-hidden pb-0"
+            style={{
+              clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 calc(100% - 80px))",
+              marginBottom: "-112px"
+            }}
+          >
             {/* Center iPhone with thin bezel (no notch) */}
-            <div className="absolute left-1/2 top-1/2 z-30 mt-30 -translate-x-1/2 -translate-y-1/2 h-[700px] w-[330px] rounded-[41px] border-[3px] border-[#0a0a0a] bg-[#0a0a0a]">
+            <div className="relative z-30 mb-0 h-[650px] w-[305px] rounded-[38px] border-[3px] border-[#0a0a0a] bg-[#0a0a0a]">
+              {/* Aura */}
+              <div
+                className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  width: "110%",
+                  height: "110%",
+                  borderRadius: "50%",
+                  filter: "blur(60px)",
+                  background: "radial-gradient(circle, #cbf4ea 0%, #ffd14080 70%, transparent 100%)",
+                  opacity: 0.7,
+                  zIndex: -1,
+                }}
+              />
               {/* Screen */}
-              <div className="relative h-full w-full overflow-hidden rounded-[38px]">
+              <div className="relative h-full w-full overflow-hidden rounded-[35px] ">
                 <VideoAutoPlay
                   poster="/assets/hero-screen-center.png"
                   sources={[
@@ -192,25 +210,41 @@ export function Hero() {
             </div>
 
             {/* Left iPhone - rotated */}
-            <div className="mt-[165px]">
-              <div
-                className="absolute left-[5%] top-1/2 z-10 mt-2 h-[583px] w-[322px] -translate-y-1/2 rotate-[-5.8deg] rounded-[34px] border-[3px] border-[#0a0a0a] bg-[#0a0a0a]"
-              >
-                <div className="relative h-full w-full overflow-hidden rounded-[30px]">
-                  <img src="/assets/hero-screen-left.png" alt="" className="h-full w-full object-cover" />
-                </div>
+            <div>
+              <div className="absolute left-[5%] bottom-0 z-10 h-[540px] w-[298px]">
+                {/* Aura */}
+                <div
+                  className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    width: "110%",
+                    height: "110%",
+                    borderRadius: "50%",
+                    filter: "blur(50px)",
+                    background: "radial-gradient(circle, #cbf4ea 0%, #ffd14080 70%, transparent 100%)",
+                    opacity: 0.6,
+                    zIndex: -1,
+                  }}
+                />
+                <img src="/assets/left_iphone.png" alt="" className="h-full w-full object-contain" />
               </div>
 
               {/* Right iPhone - rotated */}
-              <div
-                className="absolute right-[5%] top-1/2 z-10 mt-6 h-[583px] w-[322px] -translate-y-1/2 rotate-[4.75deg] rounded-[34px] border-[3px] border-[#0a0a0a] bg-[#0a0a0a]"
-              >
-                <div className="relative h-full w-full overflow-hidden rounded-[30px]">
-                  <img src="/assets/hero-screen-right.png" alt="" className="h-full w-full object-cover" />
-                </div>
+              <div className="absolute right-[5%] bottom-0 z-10 h-[540px] w-[298px]">
+                {/* Aura */}
+                <div
+                  className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    width: "110%",
+                    height: "110%",
+                    borderRadius: "50%",
+                    filter: "blur(50px)",
+                    background: "radial-gradient(circle, #cbf4ea 0%, #ffd14080 70%, transparent 100%)",
+                    opacity: 0.6,
+                    zIndex: -1,
+                  }}
+                />
+                <img src="/assets/iphone_right.png" alt="" className="h-full w-full object-contain" />
               </div>
-              {/* Baseline crop overlay */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-[-50px] z-50 h-[200px] border-t border-[#e8e4cf] bg-[#f7f4e2]" />
             </div>
           </div>
         </motion.div>
@@ -247,7 +281,7 @@ export function Hero() {
                 <video
                   autoPlay
                   controls
-                  className="h-full w-full"
+                  className="h-full w-full object-cover"
                   src="/_videos/v1/exmaple_hero_vid.mp4"
                 >
                   Your browser does not support the video tag.
@@ -294,7 +328,7 @@ function VideoAutoPlay({
       loop
       preload="metadata"
       poster={poster}
-      className="absolute inset-0 h-auto w-full rounded-[38px] object-contain bg-transparent"
+      className="absolute inset-0 h-full w-full rounded-[35px] object-cover"
     >
       {sources.map((s) => (
         <source key={s.src} src={s.src} type={s.type} />
