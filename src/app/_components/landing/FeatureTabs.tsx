@@ -10,7 +10,7 @@ const tabs = [
     title: "Universal Recipe Importer",
     features: [
       "Imports from Instagram, TikTok, YouTube, websites—anywhere",
-      "Extracts recipes from photos, videos, and PDFs",
+      "Extracts recipes from photos, videos, and web pages",
       "Works with handwritten recipes",
       "Saves to your personal library instantly",
       "Never lose a recipe again",
@@ -21,12 +21,12 @@ const tabs = [
   },
   {
     id: "voice",
-    title: "Voice Assistant",
+    title: "Voice Assistant & Hey Chef! Mode",
     features: [
       "Completely hands-free cooking experience",
-      "Ask 'what's next?' to hear instructions",
-      "Set timers with your voice",
-      "Scale recipes verbally",
+      "Ask 'what's next?' or 'repeat that step' to hear instructions",
+      "Talk to the recipe in your own language",
+      "Hey Chef! 'What can i replace the Sugar with?'",
     ],
   },
   {
@@ -36,6 +36,7 @@ const tabs = [
       "Instant Keto, Vegan, Gluten-Free conversions",
       "Smart ingredient substitutions",
       "Maintains flavor profiles",
+      "Creates a copy of the recipe with the diet you converted to",
     ],
   },
   {
@@ -123,6 +124,32 @@ export function FeatureTabs() {
           <p className="mx-auto max-w-[900px] font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
             Your all-in-one solution for saving and cooking recipes
           </p>
+
+          {/* Social Icons */}
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {[
+              { icon: "youtube.png", name: "YouTube" },
+              { icon: "instagram.png", name: "Instagram" },
+              { icon: "tiktok.png", name: "TikTok" },
+              { icon: "facebook_icon.png", name: "Facebook" },
+              { icon: "internet.png", name: "Website" },
+            ].map((social, index) => (
+              <motion.div
+                key={social.name}
+                initial={{ x: -20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="flex h-8 w-8 items-center justify-center rounded-md bg-white shadow-md"
+              >
+                <img
+                  src={`/assets/icons/${social.icon}`}
+                  alt={social.name}
+                  className="h-5 w-5 object-contain"
+                />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Tabs */}
@@ -207,6 +234,42 @@ export function FeatureTabs() {
                   </p>
                 </motion.div>
               )}
+
+              {tabs[activeTab]?.id === "diet" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
+                >
+                  <div className="flex items-center gap-2">
+                    <motion.img
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6 }}
+                      src="/assets/keto-green2.png"
+                      alt="Keto label"
+                      className="h-8 w-auto select-none object-contain"
+                    />
+                    <motion.img
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.7 }}
+                      src="/assets/gluten.svg"
+                      alt="Gluten free"
+                      className="h-8 w-auto select-none object-contain"
+                    />
+                    <motion.img
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.8 }}
+                      src="/assets/vegi.png"
+                      alt="Vegetarian"
+                      className="h-8 w-auto select-none object-contain"
+                    />
+                  </div>
+                </motion.div>
+              )}
             </div>
 
             {/* Right - Visual */}
@@ -217,22 +280,31 @@ export function FeatureTabs() {
                 transition={{ duration: 0.5 }}
                 className="relative"
               >
-                <motion.div
-                  animate={{
-                    y: [0, -15, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="h-[560px] w-[310px] rounded-[38px] bg-[#0a0a0a] shadow-2xl"
-                >
-                  <div className="relative m-[8px] h-[544px] rounded-[34px] bg-black">
-                    <div className="absolute left-1/2 top-0 z-10 h-[18px] w-[108px] -translate-x-1/2 rounded-b-[12px] bg-black" />
-                    <img src="/assets/iphone-screen-1.png" alt="Feature visual" className="absolute inset-0 h-full w-full rounded-[30px] object-cover" />
-                  </div>
-                </motion.div>
+                {tabs[activeTab]?.id === "voice" ? (
+                  <img
+                    src="/assets/voice_assitant.png"
+                    alt="Voice Assistant"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "diet" ? (
+                  <img
+                    src="/assets/convert.png"
+                    alt="AI Diet Conversions"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "translation" ? (
+                  <img
+                    src="/assets/lang.png"
+                    alt="Smart Translation"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : (
+                  <img
+                    src="/assets/Container.png"
+                    alt="Feature visual"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                )}
               </motion.div>
             </div>
           </motion.div>
