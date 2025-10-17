@@ -6,17 +6,17 @@ import { Check } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="bg-white px-[120px] py-20">
+    <section className="bg-white px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[1440px]">
-        <div className="rounded-[24px] border border-[#ececed] bg-[#fcfbf3] p-12">
-          <div className="flex items-center justify-center gap-[58px]">
+        <div className="rounded-2xl border border-[#ececed] bg-[#fcfbf3] p-6 md:rounded-[24px] md:p-12">
+          <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-[58px]">
             {/* Left - Phone Mockup */}
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="flex w-[412px] items-center justify-center mb-[-48px]"
+              className="flex w-full max-w-[300px] items-center justify-center md:mb-[-48px] md:w-[412px] md:max-w-none"
             >
               <div className="relative">
                 <img
@@ -33,7 +33,7 @@ export function CTA() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="flex w-[462px] flex-col gap-12"
+              className="flex w-full flex-col gap-6 text-center md:w-[462px] md:gap-12 md:text-left"
             >
               {/* Header */}
               <div className="flex flex-col gap-3">
@@ -42,7 +42,7 @@ export function CTA() {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="font-['Oswald'] text-[48px] font-semibold leading-[1.2] tracking-[-1.44px] text-[#0a090b]"
+                  className="font-['Oswald'] text-3xl font-semibold leading-[1.2] tracking-[-1px] text-[#0a090b] md:text-[48px] md:tracking-[-1.44px]"
                 >
                   Stop Losing Recipes.
                   <br />

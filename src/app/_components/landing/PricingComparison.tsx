@@ -95,19 +95,19 @@ export function PricingComparison() {
   };
 
   return (
-    <div className="bg-[#fffef9] px-[120px] py-20">
+    <div className="bg-[#fffef9] px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
+          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             Why RecipeForLater <span className="text-[#e74c3c]">Wins</span>
           </h2>
-          <p className="font-['Oswald'] text-2xl font-normal leading-[1.2] text-[#4f4d55]">
+          <p className="font-['Oswald'] text-base font-normal leading-[1.2] text-[#4f4d55] md:text-2xl">
             How We're Different from the Competition
           </p>
         </motion.div>
@@ -117,12 +117,12 @@ export function PricingComparison() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="overflow-hidden rounded-3xl border border-[#ececed]"
+          className="overflow-x-auto overflow-hidden rounded-2xl border border-[#ececed] md:rounded-3xl"
         >
-          <div className="grid grid-cols-3 bg-white">
+          <div className="grid min-w-[800px] grid-cols-3 bg-white md:min-w-0">
             {/* Header Row */}
-            <div className="border-r border-[#ececed] bg-white px-8 py-5">
-              <div className="mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+            <div className="border-r border-[#ececed] bg-white px-4 py-4 md:px-8 md:py-5">
+              <div className="mb-1 font-['Oswald'] text-base font-semibold text-[#0a090b] md:text-xl">
                 Feature
               </div>
               <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">

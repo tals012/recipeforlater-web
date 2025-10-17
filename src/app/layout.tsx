@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   title: "RecipeForLater",
   description: "Recipe sharing and discovery platform",
   icons: [{ rel: "icon", url: "/assets/icons/logo-favico.ico" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 const inter = Inter({

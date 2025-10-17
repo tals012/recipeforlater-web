@@ -43,7 +43,7 @@ export function MealPlannerNotification() {
     const notif = notifications[index] ?? notifications[0];
 
     return (
-        <div className="relative h-[60px] w-full">
+        <div className="relative h-[60px] w-full max-w-full">
             <AnimatePresence mode="wait">
                 {visible && notif && (
                     <motion.div
@@ -52,7 +52,7 @@ export function MealPlannerNotification() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ type: "spring", damping: 22, stiffness: 280 }}
-                        className="absolute left-0 top-0 w-[380px] overflow-hidden rounded-2xl bg-gradient-to-r from-[#7dd3c0]/90 to-[#78c9e8]/90 backdrop-blur-xl text-[#333]"
+                        className="absolute left-0 top-0 w-full max-w-[380px] overflow-hidden rounded-2xl bg-gradient-to-r from-[#7dd3c0]/90 to-[#78c9e8]/90 backdrop-blur-xl text-[#333]"
                         style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" }}
                     >
                         <div className="flex items-center gap-3 px-4 py-3">

@@ -15,12 +15,12 @@ export function Hero() {
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col gap-10"
+          className="flex w-full flex-col items-center gap-6 text-center md:w-auto md:items-start md:gap-10 md:text-left"
         >
           {/* Main Heading */}
           <div className="flex flex-col gap-6">
             <div className="relative overflow-hidden">
-              <h1 className="font-['Oswald'] text-[72px] font-bold leading-[1.2] tracking-[-2.16px] text-[#0a090b]">
+              <h1 className="font-['Oswald'] text-[48px] font-bold leading-[1.2] tracking-[-1.5px] text-[#0a090b] md:text-[72px] md:tracking-[-2.16px]">
                 {/* Animated words */}
                 <div className="flex flex-wrap gap-2 overflow-hidden">
                   {["Save", "any", "Recipe."].map((word, index) => (
@@ -64,7 +64,7 @@ export function Hero() {
                     }}
                     src="/assets/logo_hero.png"
                     alt="Recipe For Later"
-                    className="inline-block h-16 w-auto"
+                    className="inline-block h-12 w-auto md:h-16"
                   />
                 </span>
                 <br />
@@ -76,7 +76,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="max-w-[541px] font-['Oswald'] text-2xl font-light leading-7 text-[#0a090b]"
+              className="max-w-[541px] font-['Oswald'] text-lg font-light leading-6 text-[#0a090b] md:text-2xl md:leading-7"
             >
               Stop losing recipes in screenshots and bookmarks. Import from anywhere, cook
               hands-free, and share what you love, all powered by AI.
@@ -97,7 +97,7 @@ export function Hero() {
             </motion.button>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2 md:justify-start">
               {[
                 { icon: "youtube.png", name: "YouTube" },
                 { icon: "instagram.png", name: "Instagram" },
@@ -127,9 +127,9 @@ export function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-col gap-3"
+            className="flex w-full flex-col items-center gap-3 md:w-auto md:items-start"
           >
-            <div className="flex flex-col gap-0.5">
+            <div className="hidden flex-col gap-0.5 md:flex">
               <h3 className="font-['Oswald'] text-xl font-light text-[#0a090b]">
                 Get Started Free
               </h3>
@@ -139,7 +139,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3 md:justify-start">
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.05 }}
@@ -173,15 +173,13 @@ export function Hero() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="relative flex-1"
+          className="relative w-full md:flex-1"
         >
-          <div className="relative h-[700px] w-full flex items-end justify-center pb-0"
-            style={{
-              marginBottom: "-112px"
-            }}
+          <div
+            className="relative flex h-[500px] w-full items-center justify-center pb-0 md:mb-[-112px] md:h-[700px] md:items-end"
           >
             {/* Center iPhone - video with frame */}
-            <div className="relative z-30 mb-0 h-[650px] w-auto">
+            <div className="relative z-30 mb-0 h-[450px] w-auto md:h-[650px]">
               {/* Aura */}
               <div
                 className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -211,8 +209,8 @@ export function Hero() {
               </video>
             </div>
 
-            {/* Left iPhone - rotated */}
-            <div>
+            {/* Left iPhone - rotated - Desktop only */}
+            <div className="hidden md:block">
               <div className="absolute left-[5%] bottom-0 z-10 h-[540px] w-[298px]">
                 {/* Aura */}
                 <div
@@ -230,8 +228,8 @@ export function Hero() {
                 <img src="/assets/left_iphone.png" alt="" className="h-full w-full object-contain" />
               </div>
 
-              {/* Right iPhone - rotated */}
-              <div className="absolute right-[5%] bottom-0 z-10 h-[540px] w-[298px]">
+              {/* Right iPhone - rotated - Desktop only */}
+              <div className="absolute right-[5%] bottom-0 z-10 hidden h-[540px] w-[298px] md:block">
                 {/* Aura */}
                 <div
                   className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"

@@ -111,7 +111,7 @@ export function FeatureTabs() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="bg-white px-[120px] py-20">
+    <section className="bg-white px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[1440px]">
         {/* Section Header */}
         <motion.div
@@ -119,12 +119,12 @@ export function FeatureTabs() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
+          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             Core <span className="text-[#e74c3c]">Features</span> (Detailed)
           </h2>
-          <p className="mx-auto max-w-[900px] font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
+          <p className="mx-auto max-w-[900px] font-['Oswald'] text-base font-normal leading-[1.4] text-[#4f4d55] md:text-2xl md:leading-[22px]">
             Your all-in-one solution for saving and cooking recipes
           </p>
 
@@ -156,7 +156,7 @@ export function FeatureTabs() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="mb-12 flex flex-wrap gap-4">
+        <div className="mb-6 flex flex-wrap gap-2 md:mb-12 md:gap-4">
           {tabs.map((tab, index) => (
             <motion.button
               key={tab.id}
@@ -167,7 +167,7 @@ export function FeatureTabs() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(index)}
-              className={`rounded-lg px-4 py-2 font-['Oswald'] text-base font-medium transition-all ${activeTab === index
+              className={`rounded-lg px-3 py-1.5 font-['Oswald'] text-sm font-medium transition-all md:px-4 md:py-2 md:text-base ${activeTab === index
                 ? "bg-[#177654] text-white shadow-lg"
                 : "bg-[#f7f4e2] text-[#4f4d55] hover:bg-[#ebe8d4]"
                 }`}
@@ -185,7 +185,7 @@ export function FeatureTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-2 gap-12 rounded-3xl bg-gradient-to-br from-[#f7f4e2] to-white p-12"
+            className="grid grid-cols-1 gap-6 rounded-2xl bg-gradient-to-br from-[#f7f4e2] to-white p-6 md:grid-cols-2 md:gap-12 md:rounded-3xl md:p-12"
           >
             {/* Left - Content */}
             <div className="flex flex-col justify-center gap-8">

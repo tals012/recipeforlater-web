@@ -7,9 +7,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0a090b] px-[120px] py-12">
+    <footer className="bg-[#0a090b] px-4 py-8 md:px-[120px] md:py-12">
       <div className="mx-auto max-w-[1440px]">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:justify-between md:gap-0">
           {/* Logo & Copyright */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center gap-8"
+            className="flex flex-col items-center gap-3 text-center md:flex-row md:gap-8 md:text-left"
           >
             <a
               href="/privacy"

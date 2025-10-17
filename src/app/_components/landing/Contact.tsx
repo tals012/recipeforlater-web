@@ -17,16 +17,16 @@ export function Contact() {
   };
 
   return (
-    <section className="bg-[#f7f4e2] px-[120px] py-20">
+    <section className="bg-[#f7f4e2] px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[1440px]">
-        <div className="flex items-center gap-[160px]">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:gap-[160px]">
           {/* Left - Form */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-1 flex-col gap-12"
+            className="flex w-full flex-col gap-6 md:flex-1 md:gap-12"
           >
             {/* Header */}
             <motion.div
@@ -36,7 +36,7 @@ export function Contact() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col gap-3"
             >
-              <h2 className="font-['Oswald'] text-[48px] font-semibold leading-[1.2] tracking-[-1.44px] text-[#0a090b]">
+              <h2 className="font-['Oswald'] text-3xl font-semibold leading-[1.2] tracking-[-1px] text-[#0a090b] md:text-[48px] md:tracking-[-1.44px]">
                 Get in <span className="text-[#e74c3c]">touch</span> with us
               </h2>
               <p className="font-['Oswald'] text-[24px] font-normal leading-[22px] tracking-[-0.18px] text-[#4f4d55]">
