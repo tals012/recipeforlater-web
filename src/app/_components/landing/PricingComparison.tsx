@@ -225,13 +225,13 @@ export function PricingComparison() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16"
+          className="mt-8 md:mt-16"
         >
-          <h3 className="mb-10 text-center font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
+          <h3 className="mb-6 text-center font-['Oswald'] text-2xl font-semibold leading-[1.2] text-[#0a090b] md:mb-10 md:text-5xl">
             Key Differentiators
           </h3>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {[
               {
                 title: "We're the only app with full voice control",
@@ -261,16 +261,16 @@ export function PricingComparison() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5, boxShadow: "0 15px 30px rgba(0,0,0,0.1)" }}
-                className="flex gap-6 rounded-3xl border border-[#ececed] bg-white p-6 transition-all"
+                className="flex gap-4 rounded-2xl border border-[#ececed] bg-white p-4 transition-all md:gap-6 md:rounded-3xl md:p-6"
               >
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#c1f4d4]">
-                  <Check className="h-5 w-5 text-[#019939]" />
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#c1f4d4] md:h-10 md:w-10">
+                  <Check className="h-4 w-4 text-[#019939] md:h-5 md:w-5" />
                 </div>
                 <div>
-                  <h4 className="mb-2 font-['Inter'] text-xl font-semibold leading-[1.2] text-[#0a090b]">
+                  <h4 className="mb-1 font-['Inter'] text-base font-semibold leading-[1.2] text-[#0a090b] md:mb-2 md:text-xl">
                     {item.title}
                   </h4>
-                  <p className="font-['Inter'] text-base leading-[22px] text-[#4f4d55]">
+                  <p className="font-['Inter'] text-sm leading-[1.4] text-[#4f4d55] md:text-base md:leading-[22px]">
                     {item.description}
                   </p>
                 </div>

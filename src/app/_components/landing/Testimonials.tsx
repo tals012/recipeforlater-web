@@ -46,7 +46,7 @@ export function Testimonials() {
   };
 
   return (
-    <section className="bg-white px-[120px] py-20">
+    <section className="bg-white px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[1440px]">
         {/* Section Header */}
         <motion.div
@@ -54,12 +54,12 @@ export function Testimonials() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
+          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             <span className="text-[#e74c3c]">Loved</span> By Home Cooks Everywhere
           </h2>
-          <p className="font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
+          <p className="font-['Oswald'] text-base font-normal leading-[1.4] text-[#4f4d55] md:text-2xl md:leading-[22px]">
             Join thousands who've organized their cooking life
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ export function Testimonials() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mx-auto max-w-[1200px]"
         >
-          <div className="rounded-3xl bg-gradient-to-br from-[#f7f4e2] to-white p-12 shadow-xl">
+          <div className="rounded-2xl bg-gradient-to-br from-[#f7f4e2] to-white p-6 shadow-xl md:rounded-3xl md:p-12">
             {/* Content */}
             <div className="flex flex-col justify-between py-8">
               <div>

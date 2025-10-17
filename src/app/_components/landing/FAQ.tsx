@@ -46,7 +46,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#fffef9] px-[120px] py-20">
+    <section className="bg-[#fffef9] px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[900px]">
         {/* Section Header */}
         <motion.div
@@ -54,12 +54,12 @@ export function FAQ() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
+          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             Frequently Asked <span className="text-[#e74c3c]">Questions</span>
           </h2>
-          <p className="font-['Oswald'] text-xl font-normal leading-[1.2] text-[#4f4d55]">
+          <p className="font-['Oswald'] text-base font-normal leading-[1.2] text-[#4f4d55] md:text-xl">
             Everything you need to know about RecipeForLater
           </p>
         </motion.div>
