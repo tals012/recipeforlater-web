@@ -91,7 +91,7 @@ export function RandomNotification() {
                                     </span>
                                 </div>
                                 <p className="font-['Inter'] text-base font-normal text-[#0a090b]">
-                                    {currentNotification.user} added "{currentNotification.recipe}"
+                                    {currentNotification?.user} added "{currentNotification?.recipe}"
                                 </p>
                             </div>
                         </div>

@@ -156,15 +156,11 @@ export function FeatureTabs() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="mb-6 -mx-4 overflow-x-auto px-4 md:mx-0 md:px-0 md:mb-12">
+        <div className="mb-6 -mx-4 overflow-x-auto overflow-y-hidden px-4 md:mx-0 md:px-0 md:mb-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="flex gap-2 min-w-max md:min-w-0 md:flex-wrap md:gap-4">
             {tabs.map((tab, index) => (
               <motion.button
                 key={tab.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab(index)}
