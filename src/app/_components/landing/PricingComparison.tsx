@@ -6,46 +6,54 @@ import { Check, X } from "lucide-react";
 
 const features = [
   {
-    name: "Voice Cooking Assistant",
-    rfl: { text: "Full hands-free control", icon: "check" },
-    recime: { icon: "x" },
-    deglaze: { icon: "x" },
+    name: "🧠 Smart Importer",
+    rfl: { text: "Paste from anywhere - instantly organized", icon: "check" },
+    other: { text: "Limited to few recipes or weekly limit", icon: "x" },
   },
   {
-    name: "Audio-Only Video Import",
-    rfl: { text: "AI analyzes voice", icon: "check" },
-    recime: { icon: "x" },
-    deglaze: { icon: "x" },
+    name: "🛒 Smart Shopping List",
+    rfl: { text: "Grouped by supermarket sections", icon: "check" },
+    other: { text: "Basic list", icon: "warning" },
   },
   {
-    name: "Diet Conversion (AI)",
-    rfl: { text: "Keto, Vegan, GF", icon: "check" },
-    recime: { icon: "x" },
-    deglaze: { icon: "x" },
+    name: "🔮 Convert Recipe in a Click",
+    rfl: { text: "Keto, Vegan, GF with AI", icon: "check" },
+    other: { icon: "x" },
   },
   {
-    name: "Smart Translation",
-    rfl: { text: "Auto-detect + cooking terms", icon: "check" },
-    recime: { icon: "x" },
-    deglaze: { icon: "x" },
+    name: "📊 Automatic Nutrition Facts",
+    rfl: { text: "Calories, macros & insights", icon: "check" },
+    other: { icon: "x" },
   },
   {
-    name: "Story Mode",
-    rfl: { text: "Video-synced steps", icon: "check" },
-    recime: { icon: "x" },
-    deglaze: { icon: "x" },
+    name: "👥 Share collections with family",
+    rfl: { text: "Collaborate & share", icon: "check" },
+    other: { text: "Basic sharing", icon: "warning" },
+  },
+  {
+    name: "🎙️ Cook hands-free",
+    rfl: { text: "AI Chef reads aloud - say 'Next'", icon: "check" },
+    other: { icon: "x" },
+  },
+  {
+    name: "📅 Plan your meals",
+    rfl: { text: "Drag & drop into your week", icon: "check" },
+    other: { text: "Limited", icon: "warning" },
+  },
+  {
+    name: "🌐 Translate recipes instantly",
+    rfl: { text: "One tap - any language", icon: "check" },
+    other: { icon: "x" },
   },
   {
     name: "Price",
-    rfl: { text: "$4.99/mo or $34.99/yr" },
-    recime: { text: "$39.99/yr" },
-    deglaze: { text: "Unknown" },
+    rfl: { text: "$4.99/mo or $34.99/yr + 7 days free trial" },
+    other: { text: "$39.99/yr+" },
   },
   {
     name: "Free Trial",
-    rfl: { text: "Full features", icon: "check" },
-    recime: { text: "Limited to 8 saves", icon: "warning" },
-    deglaze: { text: "Unknown" },
+    rfl: { text: "7 days - Full features", icon: "check" },
+    other: { text: "Limited features", icon: "warning" },
   },
 ];
 
@@ -75,6 +83,17 @@ const IconBadge = ({ icon }: { icon: "check" | "x" | "warning" }) => {
 };
 
 export function PricingComparison() {
+  const scrollToFeatures = () => {
+    // Find the FeatureTabs section by looking for its unique heading
+    const featureTabsSection = Array.from(document.querySelectorAll('h2')).find(
+      (h2) => h2.textContent?.includes('Key Differentiators')
+    )?.closest('section');
+
+    if (featureTabsSection) {
+      featureTabsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="bg-[#fffef9] px-[120px] py-20">
       <div className="mx-auto max-w-[1440px]">
@@ -89,7 +108,7 @@ export function PricingComparison() {
             Why RecipeForLater Wins
           </h2>
           <p className="font-['Oswald'] text-2xl font-normal leading-[1.2] text-[#4f4d55]">
-            How We're Different from ReciMe & Deglaze
+            How We're Different from the Competition
           </p>
         </motion.div>
 
@@ -100,38 +119,31 @@ export function PricingComparison() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="overflow-hidden rounded-3xl border border-[#ececed]"
         >
-          <div className="grid grid-cols-4 bg-white">
+          <div className="grid grid-cols-3 bg-white">
             {/* Header Row */}
             <div className="border-r border-[#ececed] bg-white px-8 py-5">
               <div className="mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
                 Feature
               </div>
               <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">
-                Lorem Ipsum is simply dummy text of the printing.
+                Compare what makes us different
               </p>
             </div>
             <div className="border-r border-[#ececed] bg-white px-8 py-5">
-              <div className="mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+              <div className="flex flex-row items-center gap-2 mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+                <img src="/assets/logonew.png" alt="RecipeForLater" className="h-6 w-6  " />
                 RecipeForLater
               </div>
               <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">
-                Lorem Ipsum is simply dummy text of the printing.
-              </p>
-            </div>
-            <div className="border-r border-[#ececed] bg-white px-8 py-5">
-              <div className="mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
-                ReciMe
-              </div>
-              <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">
-                Lorem Ipsum is simply dummy text of the printing.
+                Smart AI-powered recipe assistant
               </p>
             </div>
             <div className="bg-white px-8 py-5">
               <div className="mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
-                Deglaze
+                Other Apps
               </div>
               <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">
-                Lorem Ipsum is simply dummy text of the printing.
+                Traditional recipe managers
               </p>
             </div>
 
@@ -167,40 +179,45 @@ export function PricingComparison() {
                   )}
                 </motion.div>
 
-                {/* ReciMe Column */}
+                {/* Other Apps Column */}
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 + 0.15 }}
-                  className="flex items-center gap-[9px] border-t border-r border-[#ececed] bg-white px-8 py-4"
-                >
-                  {feature.recime.icon && <IconBadge icon={feature.recime.icon as any} />}
-                  {feature.recime.text && (
-                    <span className="font-['Oswald'] text-base font-[550] leading-5 text-[#0a090b]">
-                      {feature.recime.text}
-                    </span>
-                  )}
-                </motion.div>
-
-                {/* Deglaze Column */}
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 + 0.2 }}
                   className="flex items-center gap-[9px] border-t border-[#ececed] bg-white px-8 py-4"
                 >
-                  {feature.deglaze.icon && <IconBadge icon={feature.deglaze.icon as any} />}
-                  {feature.deglaze.text && (
+                  {feature.other.icon && <IconBadge icon={feature.other.icon as any} />}
+                  {feature.other.text && (
                     <span className="font-['Oswald'] text-base font-[550] leading-5 text-[#0a090b]">
-                      {feature.deglaze.text}
+                      {feature.other.text}
                     </span>
                   )}
                 </motion.div>
               </React.Fragment>
             ))}
           </div>
+        </motion.div>
+
+        {/* CTA Button after table */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <p className="mb-4 font-['Oswald'] text-2xl font-semibold text-[#0a090b]">
+            We have soooo many more features! 🎉
+          </p>
+          <motion.button
+            onClick={scrollToFeatures}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="rounded-md bg-[#177654] px-8 py-4 font-['Inter'] text-base font-medium text-white shadow-lg transition-all hover:bg-[#145d45]"
+          >
+            Click here to see them all →
+          </motion.button>
         </motion.div>
 
         <motion.div

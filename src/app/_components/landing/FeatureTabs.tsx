@@ -118,7 +118,7 @@ export function FeatureTabs() {
           className="mb-16 text-center"
         >
           <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
-            Key Differentiators
+            Core Features (Detailed)
           </h2>
           <p className="mx-auto max-w-[900px] font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
             Your all-in-one solution for saving and cooking recipes
@@ -138,8 +138,8 @@ export function FeatureTabs() {
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(index)}
               className={`rounded-lg px-4 py-2 font-['Oswald'] text-base font-medium transition-all ${activeTab === index
-                  ? "bg-[#177654] text-white shadow-lg"
-                  : "bg-[#f7f4e2] text-[#4f4d55] hover:bg-[#ebe8d4]"
+                ? "bg-[#177654] text-white shadow-lg"
+                : "bg-[#f7f4e2] text-[#4f4d55] hover:bg-[#ebe8d4]"
                 }`}
             >
               {tab.title}

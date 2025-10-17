@@ -8,7 +8,7 @@ export function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f4e2] px-[120px] py-20 pt-36">
+    <section className="relative overflow-hidden bg-[#f7f4e2] px-[60px] pt-3">
       <div className="relative mx-auto flex max-w-[1440px] flex-row-reverse items-center gap-[60px]">
         {/* Left Content */}
         <motion.div
@@ -194,21 +194,19 @@ export function Hero() {
             {/* Left iPhone - rotated */}
             <div className="mt-[165px]">
               <div
-                className="absolute left-[5%] top-1/2 z-10 mt-2 h-[583px] w-[322px] -translate-y-1/2 rotate-[-5.8deg] rounded-[34px] bg-[#0a0a0a] shadow-xl"
+                className="absolute left-[5%] top-1/2 z-10 mt-2 h-[583px] w-[322px] -translate-y-1/2 rotate-[-5.8deg] rounded-[34px] border-[3px] border-[#0a0a0a] bg-[#0a0a0a]"
               >
-                <div className="relative m-[10px] h-[563px] rounded-[30px] bg-black">
-                  <div className="absolute left-1/2 top-0 z-10 h-[20px] w-[122px] -translate-x-1/2 rounded-b-[14px] bg-black" />
-                  <img src="/assets/hero-screen-left.png" alt="" className="absolute inset-0 h-full w-full rounded-[28px] object-cover" />
+                <div className="relative h-full w-full overflow-hidden rounded-[30px]">
+                  <img src="/assets/hero-screen-left.png" alt="" className="h-full w-full object-cover" />
                 </div>
               </div>
 
               {/* Right iPhone - rotated */}
               <div
-                className="absolute right-[5%] top-1/2 z-10 mt-6 h-[583px] w-[322px] -translate-y-1/2 rotate-[4.75deg] rounded-[34px] bg-[#0a0a0a] shadow-xl"
+                className="absolute right-[5%] top-1/2 z-10 mt-6 h-[583px] w-[322px] -translate-y-1/2 rotate-[4.75deg] rounded-[34px] border-[3px] border-[#0a0a0a] bg-[#0a0a0a]"
               >
-                <div className="relative m-[10px] h-[563px] rounded-[30px] bg-black">
-                  <div className="absolute left-1/2 top-0 z-10 h-[20px] w-[122px] -translate-x-1/2 rounded-b-[14px] bg-black" />
-                  <img src="/assets/hero-screen-right.png" alt="" className="absolute inset-0 h-full w-full rounded-[28px] object-cover" />
+                <div className="relative h-full w-full overflow-hidden rounded-[30px]">
+                  <img src="/assets/hero-screen-right.png" alt="" className="h-full w-full object-cover" />
                 </div>
               </div>
               {/* Baseline crop overlay */}

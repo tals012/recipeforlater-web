@@ -5,23 +5,16 @@ import { useEffect, useState } from "react";
 
 const notifications = [
     {
-        user: "Jack",
-        recipe: "Brownies au chocolat",
-        delay: 0,
+        title: "Time to cook Cinnamon Apple Cake!",
+        subtitle: "Dessert Time",
     },
     {
-        user: "Sarah",
-        recipe: "Pasta Carbonara",
-        delay: 0.15,
-    },
-    {
-        user: "Emma",
-        recipe: "Chocolate Chip Cookies",
-        delay: 0.3,
+        title: "Lunch Time! 🍝 Spicy Risotto Alla Romana",
+        subtitle: "Bon Appétit",
     },
 ];
 
-export function NotificationStack() {
+export function MealPlannerNotification() {
     const [index, setIndex] = useState(0);
     const [visible, setVisible] = useState(true);
 
@@ -54,7 +47,7 @@ export function NotificationStack() {
             <AnimatePresence mode="wait">
                 {visible && notif && (
                     <motion.div
-                        key={`${index}-${notif.user}`}
+                        key={`${index}-${notif.title}`}
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
@@ -67,14 +60,11 @@ export function NotificationStack() {
                                 <img src="/assets/logo.png" alt="Recipe For Later" className="h-full w-full object-contain" />
                             </div>
                             <div className="flex-1 overflow-hidden">
-                                <div className="flex items-center justify-between">
-                                    <p className="text-[16px] font-semibold leading-4">
-                                        New recipe in Shared
-                                    </p>
-                                    <span className="text-[12px] text-[#333]/70">now</span>
-                                </div>
-                                <p className="truncate text-[14px] leading-[1.4]">
-                                    {notif?.user} added "{notif?.recipe}"
+                                <p className="text-[14px] font-semibold leading-[1.3]">
+                                    {notif?.title}
+                                </p>
+                                <p className="text-[12px] leading-[1.4] opacity-90">
+                                    {notif?.subtitle}
                                 </p>
                             </div>
                         </div>
