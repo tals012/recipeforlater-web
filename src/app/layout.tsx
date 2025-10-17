@@ -10,7 +10,7 @@ import Header from "./_components/Header";
 export const metadata: Metadata = {
   title: "RecipeForLater",
   description: "Recipe sharing and discovery platform",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/assets/icons/logo-favico.ico" }],
 };
 
 const inter = Inter({

@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check, Share2, Upload } from "lucide-react";
+import { NotificationStack } from "../NotificationStack";
 
 const features = [
   {
@@ -68,16 +69,16 @@ export function Features() {
               className="flex h-[207px] items-center gap-6 rounded-3xl bg-[rgba(252,251,243,0.49)] p-6 transition-all"
             >
               <div className="h-[164px] w-[203px] flex-shrink-0 overflow-hidden rounded-2xl shadow-lg">
-                <img src="/assets/feature-create-collection.png" alt="Create collection" className="h-full w-full object-cover" />
+                <img src="/assets/create_new_collection.png" alt="Create collection" className="h-full w-full object-contain" />
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="whitespace-pre-line font-['Oswald'] text-2xl font-medium leading-[1.2] text-[#0a090b]">
-                  Save from social media
+                  Save recipes to your collections
                   <br />
-                  OR organize your collection
+                  Share with your friends and family
                 </h3>
                 <p className="font-['Oswald'] text-base font-normal leading-[22px] text-[#4f4d55]">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Save recipes from social media, screenshots, notes, and more to your collections. Share with your friends and family to get feedback and inspiration.
                 </p>
               </div>
             </motion.div>
@@ -90,11 +91,9 @@ export function Features() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-                className="flex h-[251px] flex-col gap-6 overflow-hidden rounded-3xl bg-[rgba(252,251,243,0.49)] p-6 transition-all"
+                className="flex h-[251px] flex-col gap-6 overflow-visible rounded-3xl bg-[rgba(252,251,243,0.49)] p-6 transition-all"
               >
-                <div className="h-[71px] w-full overflow-hidden rounded-2xl shadow-md">
-                  <img src="/assets/feature-share-notification.png" alt="Share notification" className="h-full w-full object-cover" />
-                </div>
+                <NotificationStack />
                 <div className="flex flex-col gap-2">
                   <h3 className="whitespace-pre-line font-['Oswald'] text-2xl font-medium leading-[1.2] text-[#0a090b]">
                     Share Recipes Collection with Friends & Family
@@ -136,7 +135,7 @@ export function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-              className="flex items-center rounded-3xl bg-[rgba(252,251,243,0.49)] p-6 transition-all"
+              className="flex items-start justify-between rounded-3xl bg-[rgba(252,251,243,0.49)] p-6 transition-all"
             >
               <div className="flex flex-col gap-2">
                 <h3 className="whitespace-pre-line font-['Oswald'] text-2xl font-medium leading-[1.2] text-[#0a090b]">
@@ -145,47 +144,51 @@ export function Features() {
                   OR adapt to your diet
                 </h3>
                 <p className="font-['Oswald'] text-base font-normal leading-[22px] text-[#4f4d55]">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Convert any recipe to fit your diet. Smart ingredient substitutions.
                 </p>
+                <div className="mt-2 flex items-center gap-2">
+                  <img
+                    src="/assets/keto-green2.png"
+                    alt="Keto label"
+                    className="h-8 w-auto select-none object-contain"
+                  />
+                  <img
+                    src="/assets/gluten.svg"
+                    alt="Gluten free"
+                    className="h-8 w-auto select-none object-contain"
+                  />
+                  <img
+                    src="/assets/vegi.png"
+                    alt="Vegetarian"
+                    className="h-8 w-auto select-none object-contain"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
 
           {/* Right Column - Large Feature */}
           <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            className="flex w-[588px] flex-col gap-6 overflow-hidden rounded-3xl p-6"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-            className="flex h-[642px] flex-col items-center gap-5 overflow-hidden rounded-3xl bg-[rgba(252,251,243,0.49)] p-6 transition-all"
-          >
+            transition={{ duration: 0.5 }}          >
             <div className="w-full">
               <h3 className="mb-2 font-['Oswald'] text-[44px] font-medium leading-[1.2] text-[#0a090b]">
                 Smart Shopping list
               </h3>
               <p className="font-['Oswald'] text-base font-normal leading-[22px] text-[#4f4d55]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Create a shopping list from your recipes in seconds. Sort by aisle and Share with your loved ones.
               </p>
             </div>
 
             {/* Phone Mockup */}
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-                rotate: [-2, 2, -2],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative flex-1"
-            >
-              <div className="h-full w-[350px] overflow-hidden rounded-[40px] bg-white shadow-2xl">
-                <img src="/assets/iphone-screen-2.png" alt="Shopping list" className="h-full w-full object-cover" />
-              </div>
-            </motion.div>
+
+            <div className="h-full w-[450px] overflow-hidden object-contain">
+              <img src="/assets/iphone_mask_shopping_list.png" alt="Shopping List phone" className="h-full w-full object-cover" />
+            </div>
+
           </motion.div>
         </div>
       </div>

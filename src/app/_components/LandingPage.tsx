@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { NotificationStack } from './NotificationStack';
 
 const FloatingFeature = ({
     icon,
@@ -170,9 +171,9 @@ const FeatureSection = () => {
                             transition={{ duration: 0.5 }}
                         >
                             <img
-                                src="/assets/feature-create-collection.png"
+                                src="/assets/create_new_collection.png"
                                 alt=""
-                                className="h-[164px] w-[203px] rounded-[14px] object-cover shadow-[0px_4px_14px_rgba(0,0,0,0.15)]"
+                                className="h-[164px] w-[100%] rounded-[14px] object-contain shadow-[0px_4px_14px_rgba(0,0,0,0.15)]"
                             />
                             <div className="flex flex-col gap-2">
                                 <h3 className="font-['Oswald'] text-2xl font-medium leading-[1.2] tracking-[-0.48px] text-[#0a090b]">
@@ -189,17 +190,13 @@ const FeatureSection = () => {
                         <div className="flex gap-6">
                             {/* Share Collection */}
                             <motion.div
-                                className="flex flex-1 flex-col gap-6 overflow-hidden rounded-3xl bg-[rgba(252,251,243,0.49)] p-6"
+                                className="flex flex-1 flex-col gap-6 overflow-visible rounded-3xl bg-[rgba(252,251,243,0.49)] p-6"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
                             >
-                                <img
-                                    src="/assets/feature-share-notification.png"
-                                    alt=""
-                                    className="h-[71px] w-[347px] rounded-[20px] object-cover"
-                                />
+                                <NotificationStack />
                                 <div className="flex flex-col gap-2">
                                     <h3 className="font-['Oswald'] text-2xl font-medium leading-[1.2] tracking-[-0.48px] text-[#0a090b]">
                                         Share Recipes Collection with Friends & Family
@@ -268,14 +265,14 @@ const FeatureSection = () => {
                                 Smart Shopping list
                             </h3>
                             <p className="font-['Oswald'] text-base font-normal leading-[22px] tracking-[-0.18px] text-[#4f4d55]">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Create a shopping list from your recipes in seconds. Sort by aisle and Share with your loved ones.
                             </p>
                         </div>
                         <div className="flex items-center justify-center">
                             <div className="relative h-[500px] w-[350px]">
                                 <img
-                                    src="/assets/iphone-screen-2.png"
-                                    alt="Shopping List"
+                                    src="/assets/iPhone_new_shopping2.png"
+                                    alt="Shopping List phone"
                                     className="h-full w-full rounded-[40px] object-cover shadow-2xl"
                                 />
                             </div>

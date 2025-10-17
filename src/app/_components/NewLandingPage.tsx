@@ -12,22 +12,28 @@ import { Contact } from "./landing/Contact";
 import { FAQ } from "./landing/FAQ";
 import { Footer } from "./landing/Footer";
 import { Header } from "./landing/Header";
+import { LoadingScreen } from "./LoadingScreen";
+import { RandomNotification } from "./RandomNotification";
 
 export default function NewLandingPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-      <Features />
-      <PricingComparison />
-      <FeatureTabs />
-      <SimplePricing />
-      <Testimonials />
-      <CTA />
-      <Contact />
-      <FAQ />
-      <Footer />
-    </div>
+    <>
+      <LoadingScreen />
+      {/* <RandomNotification /> */}
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Hero />
+        <Features />
+        <PricingComparison />
+        <FeatureTabs />
+        <SimplePricing />
+        <Testimonials />
+        <CTA />
+        <Contact />
+        <FAQ />
+        <Footer />
+      </div>
+    </>
   );
 }
 
