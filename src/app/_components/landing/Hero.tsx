@@ -20,9 +20,9 @@ export function Hero() {
           {/* Main Heading */}
           <div className="flex flex-col gap-6">
             <div className="relative overflow-hidden">
-              <h1 className="font-['Oswald'] text-[48px] font-bold leading-[1.2] tracking-[-1.5px] text-[#0a090b] md:text-[72px] md:tracking-[-2.16px]">
+              <h1 className="text-center font-['Oswald'] text-[48px] font-bold leading-[1.2] tracking-[-1.5px] text-[#0a090b] md:text-left md:text-[72px] md:tracking-[-2.16px]">
                 {/* Animated words */}
-                <div className="flex flex-wrap gap-2 overflow-hidden">
+                <div className="flex flex-wrap justify-center gap-2 overflow-hidden md:justify-start">
                   {["Save", "any", "Recipe."].map((word, index) => (
                     <div key={index} className="overflow-hidden">
                       <motion.span
@@ -41,7 +41,7 @@ export function Hero() {
                   ))}
                 </div>
 
-                <span className="inline-flex items-center gap-2">
+                <span className="inline-flex items-center justify-center gap-2 md:justify-start">
                   <motion.span
                     initial={{ y: 80, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}

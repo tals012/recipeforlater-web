@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { Header } from "./_components/landing/Header";
@@ -104,14 +104,21 @@ export function generateViewport() {
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body className="flex flex-col min-h-screen">
+    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+      <body className="flex min-h-screen max-w-full flex-col overflow-x-hidden">
         <TRPCReactProvider>
           <Header />
           {children}

@@ -20,6 +20,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-inter)"],
+        inter: ["var(--font-inter)"],
+        oswald: ["var(--font-oswald)"],
       },
     },
   },
