@@ -76,7 +76,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="max-w-[541px] font-['Oswald'] text-lg font-light leading-6 text-[#0a090b] md:text-2xl md:leading-7"
+              className="max-w-[541px] text-center font-['Oswald'] text-lg font-light leading-6 text-[#0a090b] md:text-left md:text-2xl md:leading-7"
             >
               Stop losing recipes in screenshots and bookmarks. Import from anywhere, cook
               hands-free, and share what you love, all powered by AI.
@@ -90,7 +90,7 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsVideoModalOpen(true)}
-              className="flex w-fit items-center gap-2 rounded-md bg-[#177654] px-3.5 py-2.5 font-['Inter'] text-sm font-[475] text-white shadow-lg transition-all hover:bg-[#145d45]"
+              className="flex w-full items-center justify-center gap-2 rounded-md bg-[#177654] px-3.5 py-2.5 font-['Inter'] text-sm font-[475] text-white shadow-lg transition-all hover:bg-[#145d45] md:w-fit"
             >
               Watch How It Works Demo
               <img src="/assets/arrow-right.svg" alt="" className="h-6 w-6" />
