@@ -9,7 +9,7 @@ const tabs = [
     id: "universal",
     title: "Universal Recipe Importer",
     features: [
-      "Imports from Instagram, TikTok, YouTube, websites—anywhere",
+      "Imports from Instagram, TikTok, YouTube, websites-anywhere",
       "Extracts recipes from photos, videos, and web pages",
       "Works with handwritten recipes",
       "Saves to your personal library instantly",
@@ -40,15 +40,6 @@ const tabs = [
     ],
   },
   {
-    id: "translation",
-    title: "Smart Translation",
-    features: [
-      "Auto-detect language",
-      "Cooking-specific terminology",
-      "100+ languages supported",
-    ],
-  },
-  {
     id: "nutrition",
     title: "AI Nutrition Analyzer",
     features: [
@@ -58,14 +49,15 @@ const tabs = [
     ],
   },
   {
-    id: "planner",
-    title: "Smart Meal Planner",
+    id: "story",
+    title: "Story Mode",
     features: [
-      "Weekly Meal Planning: Easily plan breakfast, lunch, and dinner for the entire week",
-      "Auto Sync with Shopping List: Ingredients are automatically added to your Smart Shopping List",
-      "Shared Family Access: Share plans and collections with family or friends",
-      "AI Suggestions: Get smart recipe recommendations based on your diet and preferences",
-      "Flexible Editing: Drag, swap, or update meals anytime — everything stays in sync",
+      "Step-by-Step Instructions: Clean, focused steps with timers and tips",
+      "Hands-Free Voice Control: Say 'Next,' 'Back,' 'Repeat,' or 'Ingredients'",
+      "Ask Anytime: 'What's the next step?' 'How long to simmer?' 'How much salt?'",
+      "On-Screen + Voice Guidance: Text and spoken cues keep you in the flow",
+      "Optional Video Sync: Match steps to video moments for visual confidence",
+      "Kitchen-Friendly UI: Large text, high contrast, and big buttons when you need them",
     ],
   },
   {
@@ -79,32 +71,40 @@ const tabs = [
     ],
   },
   {
+    id: "planner",
+    title: "Smart Meal Planner",
+    features: [
+      "Weekly Meal Planning: Easily plan breakfast, lunch, and dinner for the entire week",
+      "Auto Sync with Shopping List: Ingredients are automatically added to your Smart Shopping List",
+      "Shared Family Access: Share plans and collections with family or friends",
+      "AI Suggestions: Get smart recipe recommendations based on your diet and preferences",
+      "Flexible Editing: Drag, swap, or update meals anytime - everything stays in sync",
+    ],
+  },
+  {
+    id: "translation",
+    title: "Smart Translation",
+    features: [
+      "Auto-detect language",
+      "Cooking-specific terminology",
+      "100+ languages supported",
+    ],
+  },
+
+
+
+  {
     id: "share",
     title: "Share Collections",
     features: [
-      "Create themed collections",
-      "Share with friends and family",
-      "Collaborate on meal plans",
+      "Custom Collections: Create Dinner, Lunch, Dessert, or Holiday recipe groups",
+      "Instant Sharing: Share collections with friends, family, or your cooking team",
+      "Real-Time Updates: Any changes you make sync automatically for everyone",
+      "Perfect for Collaboration: Plan meals, swap ideas, and discover new favorites together",
     ],
   },
-  {
-    id: "story",
-    title: "Story Mode",
-    features: [
-      "Video-synced cooking steps",
-      "TikTok-style vertical format",
-      "Follow along seamlessly",
-    ],
-  },
-  {
-    id: "assistant",
-    title: "Personal Cooking Assistant",
-    features: [
-      "AI-powered cooking tips",
-      "Ingredient substitution suggestions",
-      "Real-time Q&A while cooking",
-    ],
-  },
+
+
 ];
 
 export function FeatureTabs() {
@@ -232,7 +232,7 @@ export function FeatureTabs() {
                   </p>
                   <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
                     Share any recipe link, screenshot, or video to RecipeForLater. Our AI instantly
-                    extracts ingredients, steps, and cooking times—organizing everything into a
+                    extracts ingredients, steps, and cooking times-organizing everything into a
                     clean, easy-to-follow format.
                   </p>
                 </motion.div>
@@ -249,7 +249,7 @@ export function FeatureTabs() {
                     Transform any recipe with a single tap.
                   </p>
                   <p className="mb-4 font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
-                    The AI identifies all ingredients that don't fit your diet and automatically replaces them — keeping the structure and steps intact.
+                    The AI identifies all ingredients that don't fit your diet and automatically replaces them - keeping the structure and steps intact.
                   </p>
                   <div className="flex items-center gap-2">
                     <motion.img
@@ -304,10 +304,10 @@ export function FeatureTabs() {
                   className="pt-4"
                 >
                   <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
-                    Plan your week like a pro — organize every meal effortlessly and stay consistent with your goals.
+                    Plan your week like a pro - organize every meal effortlessly and stay consistent with your goals.
                   </p>
                   <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
-                    Your recipes, schedule, and shopping list — all connected in one place.
+                    Your recipes, schedule, and shopping list - all connected in one place.
                   </p>
                 </motion.div>
               )}
@@ -320,10 +320,42 @@ export function FeatureTabs() {
                   className="pt-4"
                 >
                   <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
-                    Your grocery list — now actually smart.
+                    Your grocery list - now actually smart.
                   </p>
                   <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
                     Automatically combines ingredients from all your planned recipes and keeps everything organized for a smooth shopping experience.
+                  </p>
+                </motion.div>
+              )}
+
+              {tabs[activeTab]?.id === "share" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
+                >
+                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                    Organize and share your favorite recipes - together.
+                  </p>
+                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                    Create curated recipe collections for every occasion and share them instantly with the people you love.
+                  </p>
+                </motion.div>
+              )}
+
+              {tabs[activeTab]?.id === "story" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
+                >
+                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                    Cook like a pro with clear, bite-size steps - totally hands-free with voice commands.
+                  </p>
+                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                    Enter Story Mode, say "Next" or "Back," and get guided through every instruction on screen and by voice.
                   </p>
                 </motion.div>
               )}
@@ -371,6 +403,18 @@ export function FeatureTabs() {
                   <img
                     src="/assets/shopping_list.png"
                     alt="Intelligent Grocery List"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "share" ? (
+                  <img
+                    src="/assets/shared.png"
+                    alt="Share Collections"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "story" ? (
+                  <img
+                    src="/assets/story.png"
+                    alt="Story Mode"
                     className="h-auto w-full max-w-[500px] object-contain"
                   />
                 ) : (

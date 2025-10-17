@@ -51,7 +51,7 @@ export function SimplePricing() {
             Try free for 14 days. No credit card required.
           </p>
           <p className="mt-2 font-['Oswald'] text-lg font-normal leading-[22px] text-[#4f4d55]">
-            Cancel anytime—we promise no hard feelings.
+            Cancel anytime-we promise no hard feelings.
           </p>
         </motion.div>
 
@@ -65,9 +65,8 @@ export function SimplePricing() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(0,0,0,0.15)" }}
-              className={`relative overflow-hidden rounded-3xl border-2 ${
-                plan.popular ? "border-[#177654]" : "border-[#ececed]"
-              } bg-white p-8 transition-all`}
+              className={`relative overflow-hidden rounded-3xl border-2 ${plan.popular ? "border-[#177654]" : "border-[#ececed]"
+                } bg-white p-8 transition-all`}
             >
               {plan.badge && (
                 <div className="absolute right-8 top-8 rounded-full bg-[#f9bd23] px-3 py-1 font-['Oswald'] text-xs font-semibold text-[#0a090b]">
@@ -118,11 +117,10 @@ export function SimplePricing() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 font-['Oswald'] text-base font-semibold transition-all ${
-                  plan.popular
+                className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 font-['Oswald'] text-base font-semibold transition-all ${plan.popular
                     ? "bg-[#177654] text-white shadow-lg hover:bg-[#145d45]"
                     : "border-2 border-[#177654] text-[#177654] hover:bg-[#177654] hover:text-white"
-                }`}
+                  }`}
               >
                 Get Started
                 <ArrowRight className="h-5 w-5" />

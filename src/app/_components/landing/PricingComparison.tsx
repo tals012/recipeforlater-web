@@ -236,12 +236,12 @@ export function PricingComparison() {
               {
                 title: "We're the only app with full voice control",
                 description:
-                  `Cook completely hands-free. Ask "what's next?" while your hands are messy—RecipeForLater reads each step aloud.`,
+                  `Cook completely hands-free. Ask "what's next?" while your hands are messy-RecipeForLater reads each step aloud.`,
               },
               {
                 title: "Instant diet conversions",
                 description:
-                  "Any recipe becomes Keto, Vegan, or Gluten-Free in seconds—with smart ingredient swaps.",
+                  "Any recipe becomes Keto, Vegan, or Gluten-Free in seconds-with smart ingredient swaps.",
               },
               {
                 title: "We analyze audio-only content",

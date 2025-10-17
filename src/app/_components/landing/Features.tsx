@@ -76,7 +76,7 @@ export function Features() {
                   Hands-Free with Voice Commands
                 </h3>
                 <p className="font-['Oswald'] text-base font-normal leading-[22px] text-[#4f4d55]">
-                  Enter Story Mode to cook step-by-step—just say <span className="font-semibold text-[#019939]">"Next"</span> or <span className="font-semibold text-[#019939]">"Back"</span> to go through each instruction.
+                  Enter Story Mode to cook step-by-step-just say <span className="font-semibold text-[#019939]">"Next"</span> or <span className="font-semibold text-[#019939]">"Back"</span> to go through each instruction.
                   Ask for <span className="font-semibold text-[#019939]">ingredients</span> or <span className="font-semibold text-[#019939]">directions</span> anytime. Cook totally hands-free, guided by voice and on-screen steps!
                 </p>
                 <motion.div

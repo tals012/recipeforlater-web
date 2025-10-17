@@ -11,7 +11,7 @@ const testimonials = [
     role: "Home Cook, Mom of 3",
     image: "/testimonial-1.jpg",
     quote:
-      "RecipeForLater completely transformed how I cook. I used to have recipes scattered everywhere—screenshots, bookmarks, random notes. Now everything's in one place, and the voice assistant means I never have to touch my phone with messy hands!",
+      "RecipeForLater completely transformed how I cook. I used to have recipes scattered everywhere-screenshots, bookmarks, random notes. Now everything's in one place, and the voice assistant means I never have to touch my phone with messy hands!",
     rating: 5,
   },
   {
@@ -179,9 +179,8 @@ export function Testimonials() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all ${
-                  index === currentIndex ? "w-8 bg-[#177654]" : "w-2 bg-[#ececed]"
-                }`}
+                className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-8 bg-[#177654]" : "w-2 bg-[#ececed]"
+                  }`}
               />
             ))}
           </div>

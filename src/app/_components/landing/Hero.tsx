@@ -92,7 +92,7 @@ export function Hero() {
               onClick={() => setIsVideoModalOpen(true)}
               className="flex w-fit items-center gap-2 rounded-md bg-[#177654] px-3.5 py-2.5 font-['Inter'] text-sm font-[475] text-white shadow-lg transition-all hover:bg-[#145d45]"
             >
-              Watch Demo
+              Watch How It Works Demo
               <img src="/assets/arrow-right.svg" alt="" className="h-6 w-6" />
             </motion.button>
 
