@@ -8,7 +8,7 @@ export function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f4e2] px-4 pt-24 pb-12 md:px-[60px] md:pt-32 md:pb-8">
+    <section className="relative overflow-hidden bg-[#f7f4e2] px-4 pt-20 pb-4 md:px-[60px] md:pt-32 md:pb-8">
       <div className="relative mx-auto flex max-w-[1440px] flex-col items-center gap-8 md:flex-row-reverse md:gap-[60px]">
         {/* Left Content */}
         <motion.div
@@ -176,10 +176,10 @@ export function Hero() {
           className="relative w-full md:flex-1"
         >
           <div
-            className="relative flex h-[500px] w-full items-center justify-center pb-0 md:mb-[-112px] md:h-[700px] md:items-end"
+            className="relative flex h-[450px] w-full items-end justify-center pb-0 md:mb-[-120px] md:h-[700px] md:items-end"
           >
             {/* Center iPhone - video with frame */}
-            <div className="relative z-30 mb-0 h-[450px] w-auto md:h-[650px]">
+            <div className="relative z-30 mb-0 h-[450px] w-auto bg-transparent md:h-[650px]">
               {/* Aura */}
               <div
                 className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -200,13 +200,11 @@ export function Hero() {
                 playsInline
                 loop
                 preload="auto"
-                poster="/assets/hero-screen-center.png"
-                onError={(e) => console.error("Video error:", e)}
                 className="h-full w-auto object-contain"
-                style={{ backgroundColor: 'transparent' }}
+                style={{ background: 'transparent' }}
               >
-                <source src="/videos/v1/hero_video_new1.webm" type="video/webm" />
                 <source src="/videos/v1/hero_new.mp4" type="video/mp4" />
+                <source src="/videos/v1/hero_video_new1.webm" type="video/webm" />
                 Your browser does not support the video tag.
               </video>
             </div>
