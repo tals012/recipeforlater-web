@@ -8,7 +8,7 @@ export function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f4e2] px-4 pt-20 pb-0 md:px-[60px] md:pt-32 md:pb-8">
+    <section id="hero" className="relative overflow-hidden bg-[#f7f4e2] px-4 pt-20 pb-0 md:px-[60px] md:pt-32 md:pb-8">
       <div className="relative mx-auto flex max-w-[1440px] flex-col items-center gap-8 md:flex-row-reverse md:gap-[60px]">
         {/* Left Content */}
         <motion.div

@@ -95,7 +95,7 @@ export function PricingComparison() {
   };
 
   return (
-    <div className="bg-[#fffef9] px-4 py-12 md:px-[120px] md:py-20">
+    <div id="pricing" className="bg-[#fffef9] px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={{ y: 50, opacity: 0 }}

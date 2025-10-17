@@ -7,6 +7,16 @@ import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300);
+  };
+
   return (
     <>
       {/* Mobile Dynamic Island Header */}
@@ -22,20 +32,41 @@ export function Header() {
               width: isMobileMenuOpen ? "100%" : "auto",
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="flex items-center justify-between gap-3 rounded-full bg-white px-4 py-3 shadow-lg"
+            className="relative flex items-center justify-between gap-3 rounded-full bg-white px-4 py-3 shadow-lg"
           >
-            {/* Logo */}
-            <div className="flex h-[33px] w-[42px] items-center overflow-hidden rounded">
-              <img src="/assets/logo.png" alt="RecipeForLater" className="h-full w-full object-cover" />
+            {/* Mobile Menu Button - Left when open */}
+            {isMobileMenuOpen ? (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center justify-center rounded-full p-1.5 text-[#4f4d55] transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </motion.button>
+            ) : (
+              <div className="w-0" />
+            )}
+
+            {/* Logo - centered when menu is open */}
+            <div className={`flex items-center overflow-hidden rounded ${isMobileMenuOpen ? "absolute left-1/2 h-[33px] w-auto -translate-x-1/2" : "h-[33px] w-[42px]"
+              }`}>
+              <img
+                src={isMobileMenuOpen ? "/assets/logo_hero.png" : "/assets/logo.png"}
+                alt="RecipeForLater"
+                className="h-full w-auto object-contain transition-all duration-300"
+              />
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Right */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="flex items-center justify-center rounded-full p-1.5 text-[#4f4d55] transition-colors"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {!isMobileMenuOpen ? <Menu className="h-5 w-5" /> : <div className="h-5 w-5" />}
             </button>
           </motion.div>
         </div>
@@ -119,45 +150,42 @@ export function Header() {
             >
               {/* Navigation Links */}
               <nav className="flex w-full flex-col items-center gap-4">
-                <motion.a
+                <motion.button
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.15 }}
-                  href="#home"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => scrollToSection('hero')}
                   className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
                   Home
-                </motion.a>
+                </motion.button>
                 <motion.button
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#f7f4e2] px-6 py-4 font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
+                  onClick={() => scrollToSection('features')}
+                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
-                  Products
-                  <ChevronDown className="h-6 w-6" />
+                  Features
                 </motion.button>
-                <motion.a
+                <motion.button
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.25 }}
-                  href="#pricing"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => scrollToSection('pricing')}
                   className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
                   Pricing
-                </motion.a>
-                <motion.a
+                </motion.button>
+                <motion.button
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.3 }}
-                  href="#faq"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => scrollToSection('faq')}
                   className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
                   FAQ
-                </motion.a>
+                </motion.button>
               </nav>
 
               {/* Mobile CTA Buttons */}

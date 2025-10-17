@@ -60,7 +60,7 @@ export function FAQ() {
   };
 
   return (
-    <section className="bg-[#fffef9] px-4 py-12 md:px-[120px] md:py-20">
+    <section id="faq" className="bg-[#fffef9] px-4 py-12 md:px-[120px] md:py-20">
       {/* FAQ Schema for SEO */}
       <script
         type="application/ld+json"

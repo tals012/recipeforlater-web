@@ -37,7 +37,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="bg-white px-4 py-12 md:px-[120px] md:py-20">
+    <section id="features" className="bg-white px-4 py-12 md:px-[120px] md:py-20">
       <div className="mx-auto max-w-[1440px]">
         {/* Section Header */}
         <motion.div
