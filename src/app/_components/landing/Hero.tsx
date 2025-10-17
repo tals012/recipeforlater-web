@@ -20,7 +20,7 @@ export function Hero() {
           {/* Main Heading */}
           <div className="flex flex-col gap-6">
             <div className="relative overflow-hidden">
-              <h1 className="text-center font-['Oswald'] text-[48px] font-bold leading-[1.2] tracking-[-1.5px] text-[#0a090b] md:text-left md:text-[72px] md:tracking-[-2.16px]">
+              <h1 className="font-oswald text-center text-[48px] font-bold leading-[1.2] tracking-[-1.5px] text-[#0a090b] md:text-left md:text-[72px] md:tracking-[-2.16px]">
                 {/* Animated words */}
                 <div className="flex flex-wrap justify-center gap-2 overflow-hidden md:justify-start">
                   {["Save", "any", "Recipe."].map((word, index) => (
@@ -76,7 +76,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="max-w-[541px] text-center font-['Oswald'] text-lg font-light leading-6 text-[#0a090b] md:text-left md:text-2xl md:leading-7"
+              className="font-oswald max-w-[541px] text-center text-lg font-light leading-6 text-[#0a090b] md:text-left md:text-2xl md:leading-7"
             >
               Stop losing recipes in screenshots and bookmarks. Import from anywhere, cook
               hands-free, and share what you love, all powered by AI.
@@ -90,7 +90,7 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsVideoModalOpen(true)}
-              className="flex w-full items-center justify-center gap-2 rounded-md bg-[#177654] px-3.5 py-2.5 font-['Inter'] text-sm font-[475] text-white shadow-lg transition-all hover:bg-[#145d45] md:w-fit"
+              className="font-inter flex w-full items-center justify-center gap-2 rounded-md bg-[#177654] px-3.5 py-2.5 text-sm font-[475] text-white shadow-lg transition-all hover:bg-[#145d45] md:w-fit"
             >
               Watch How It Works Demo
               <img src="/assets/arrow-right.svg" alt="" className="h-6 w-6" />
@@ -130,10 +130,10 @@ export function Hero() {
             className="flex w-full flex-col items-center gap-3 md:w-auto md:items-start"
           >
             <div className="hidden flex-col gap-0.5 md:flex">
-              <h3 className="font-['Oswald'] text-xl font-light text-[#0a090b]">
+              <h3 className="font-oswald text-xl font-light text-[#0a090b]">
                 Get Started Free
               </h3>
-              <p className="max-w-[410px] font-['Oswald'] text-base font-light leading-[1.2] text-[#0a090b]">
+              <p className="font-oswald max-w-[410px] text-base font-light leading-[1.2] text-[#0a090b]">
                 Join thousands of home cooks who've organized their recipe chaos into a clean,
                 voice-controlled cooking experience.
               </p>
@@ -203,8 +203,10 @@ export function Hero() {
                 poster="/assets/hero-screen-center.png"
                 onError={(e) => console.error("Video error:", e)}
                 className="h-full w-auto object-contain"
+                style={{ backgroundColor: 'transparent' }}
               >
-                <source src="/_videos/v1/hero_video_new1.webm" type="video/webm" />
+                <source src="/videos/v1/hero_video_new1.webm" type="video/webm" />
+                <source src="/videos/v1/hero_new.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -282,7 +284,7 @@ export function Hero() {
                   autoPlay
                   controls
                   className="h-full w-full object-cover"
-                  src="/_videos/v1/exmaple_hero_vid.mp4"
+                  src="/videos/v1/exmaple_hero_vid.mp4"
                 >
                   Your browser does not support the video tag.
                 </video>
