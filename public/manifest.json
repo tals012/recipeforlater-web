@@ -1,0 +1,34 @@
+{
+  "name": "RecipeForLater - AI Recipe App",
+  "short_name": "RecipeForLater",
+  "description": "Save, organize & cook any recipe with AI voice assistant. Import from any website, Instagram, TikTok. Cook hands-free.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4e2",
+  "theme_color": "#177654",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/icons/logo-favico.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["food", "lifestyle", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Add Recipe",
+      "short_name": "Add",
+      "description": "Save a new recipe",
+      "url": "/",
+      "icons": []
+    },
+    {
+      "name": "Search Recipes",
+      "short_name": "Search",
+      "description": "Search your saved recipes",
+      "url": "/search",
+      "icons": []
+    }
+  ]
+}

@@ -63,7 +63,7 @@ export function Hero() {
                       ease: [0.33, 1, 0.68, 1],
                     }}
                     src="/assets/logo_hero.png"
-                    alt="Recipe For Later"
+                    alt="RecipeForLater - AI-Powered Recipe Organization App"
                     className="inline-block h-12 w-auto md:h-16"
                   />
                 </span>
@@ -225,7 +225,7 @@ export function Hero() {
                     zIndex: -1,
                   }}
                 />
-                <img src="/assets/left_iphone.png" alt="" className="h-full w-full object-contain" />
+                <img src="/assets/left_iphone.png" alt="RecipeForLater app interface showing recipe collection and diet conversion features" className="h-full w-full object-contain" />
               </div>
 
               {/* Right iPhone - rotated - Desktop only */}
@@ -243,7 +243,7 @@ export function Hero() {
                     zIndex: -1,
                   }}
                 />
-                <img src="/assets/iphone_right.png" alt="" className="h-full w-full object-contain" />
+                <img src="/assets/iphone_right.png" alt="RecipeForLater app showing smart meal planner and grocery list features" className="h-full w-full object-contain" />
               </div>
             </div>
           </div>

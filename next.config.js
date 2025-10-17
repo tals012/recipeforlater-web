@@ -39,13 +39,6 @@ const config = {
   trailingSlash: false,
   // Ensure we're using the correct base path
   basePath: "",
-  // Enable static page generation for these routes
-  async generateStaticParams() {
-    return {
-      "/auth/magic-link": true,
-      "/recipe/demo": true,
-    };
-  },
   // Configure image domains
   images: {
     remotePatterns: [
@@ -58,7 +51,12 @@ const config = {
         hostname: "**.cloudinary.com",
       },
     ],
+    formats: ["image/avif", "image/webp"],
   },
+  // Compression and performance
+  compress: true,
+  // Performance optimizations
+  poweredByHeader: false,
 };
 
 export default config;

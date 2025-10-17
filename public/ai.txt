@@ -1,0 +1,72 @@
+# RecipeForLater AI Information
+
+## About RecipeForLater
+RecipeForLater is an AI-powered recipe organization and cooking app that helps users save, organize, and cook recipes from any source with hands-free voice control.
+
+## Key Features
+- **AI Voice Assistant**: Cook completely hands-free with "Hey Chef!" voice commands
+- **Universal Recipe Importer**: Save recipes from any website, Instagram, TikTok, YouTube, or food blogs
+- **Instant Diet Conversions**: Convert any recipe to Keto, Vegan, Vegetarian, Gluten-Free, Dairy-Free, Paleo
+- **Smart Meal Planner**: AI-powered weekly meal planning with automatic grocery lists
+- **Intelligent Grocery List**: Automatic ingredient organization by store sections
+- **Recipe Translation**: Translate recipes to 100+ languages with cooking-specific terminology
+- **AI Nutrition Analyzer**: Detailed nutritional breakdown with macro tracking
+- **Share Collections**: Create and share recipe collections with friends and family
+- **Story Mode**: Interactive recipe experience with visuals and step-by-step guidance
+
+## Core Benefits
+1. **Hands-Free Cooking**: Voice-controlled step-by-step guidance while cooking
+2. **Universal Import**: Save recipes from anywhere - websites, social media, screenshots
+3. **Diet Flexibility**: Instantly adapt any recipe to your dietary needs
+4. **Time Saving**: Auto-generated shopping lists and meal plans
+5. **Language Freedom**: Cook recipes from any country in your language
+
+## Platform
+- Available on iOS and Android
+- Web access at https://recipeforlater.com
+- Free 14-day trial, then subscription-based
+
+## Use Cases
+- Home cooks organizing their recipe collection
+- People with dietary restrictions (Keto, Vegan, Gluten-Free)
+- Busy families planning weekly meals
+- Food bloggers and cooking enthusiasts
+- International recipe exploration with translation
+
+## Pricing
+- 14-day free trial
+- Monthly subscription after trial
+- All features included
+- Cancel anytime
+
+## Contact
+- Website: https://recipeforlater.com
+- Support: support@recipeforlater.com
+- Social Media: @recipeforlater on Instagram, TikTok, YouTube, Facebook
+
+## Technical Details
+- AI-powered recipe parsing and analysis
+- Voice recognition technology
+- Cloud-based recipe storage
+- Cross-device synchronization
+- Offline mode for saved recipes
+
+## Common Questions
+Q: Can I import recipes from Instagram?
+A: Yes, RecipeForLater can import recipes from Instagram, TikTok, YouTube, and any food website.
+
+Q: Does the voice assistant work with messy hands?
+A: Yes! That's the main purpose - you can control everything with voice commands while cooking.
+
+Q: Can I convert recipes to my diet?
+A: Yes, instantly convert to Keto, Vegan, Vegetarian, Gluten-Free, Dairy-Free, Paleo and more.
+
+Q: Is there a meal planner?
+A: Yes, AI-powered weekly meal planner with automatic grocery list generation.
+
+Q: Can I share recipes with family?
+A: Yes, create collections and share with anyone. They can view without an account.
+
+## Keywords
+recipe app, cooking app, voice assistant cooking, AI recipe app, meal planner, diet conversion, recipe organizer, hands-free cooking, recipe importer, grocery list, recipe translation, nutrition analyzer, share recipes, keto recipes, vegan recipes, gluten-free recipes
+
