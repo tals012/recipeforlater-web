@@ -1,19 +1,29 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export function LoadingScreen() {
     const [isLoading, setIsLoading] = useState(true);
+    const imgRef = useRef<HTMLImageElement>(null);
+    const [gifLoaded, setGifLoaded] = useState(false);
 
     useEffect(() => {
-        // Show for exactly 5 seconds
+        // Hide after GIF plays once (approximately 3 seconds for the GIF)
+        // or after 5 seconds max
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 5000);
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        // Preload the GIF
+        if (imgRef.current && !gifLoaded) {
+            imgRef.current.onload = () => setGifLoaded(true);
+        }
+    }, [gifLoaded]);
 
     return (
         <AnimatePresence>
@@ -24,14 +34,11 @@ export function LoadingScreen() {
                     transition={{ duration: 0.5 }}
                     className="fixed inset-0 z-[9999] flex items-center justify-center bg-white md:hidden"
                 >
-                    <motion.img
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                        src="/assets/Mainpla.gif"
+                    <img
+                        ref={imgRef}
+                        src="/assets/Mainpla.gif?v=1"
                         alt="Loading..."
                         className="h-screen w-screen object-contain"
-                        key={Date.now()}
                     />
                 </motion.div>
             )}
