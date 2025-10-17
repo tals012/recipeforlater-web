@@ -104,10 +104,10 @@ export function PricingComparison() {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
+          <h2 className="mb-3 font-oswald text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             Why RecipeForLater <span className="text-[#e74c3c]">Wins</span>
           </h2>
-          <p className="font-['Oswald'] text-base font-normal leading-[1.2] text-[#4f4d55] md:text-2xl">
+          <p className="font-oswald text-base font-normal leading-[1.2] text-[#4f4d55] md:text-2xl">
             How We're Different from the Competition
           </p>
         </motion.div>
@@ -122,27 +122,27 @@ export function PricingComparison() {
           <div className="grid min-w-[800px] grid-cols-3 bg-white md:min-w-0">
             {/* Header Row */}
             <div className="border-r border-[#ececed] bg-white px-4 py-4 md:px-8 md:py-5">
-              <div className="mb-1 font-['Oswald'] text-base font-semibold text-[#0a090b] md:text-xl">
+              <div className="mb-1 font-oswald text-base font-semibold text-[#0a090b] md:text-xl">
                 Feature
               </div>
-              <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">
+              <p className="font-oswald text-lg leading-[22px] text-[#4f4d55]">
                 Compare what makes us different
               </p>
             </div>
             <div className="border-r border-[#ececed] bg-white px-8 py-5">
-              <div className="flex flex-row items-center gap-2 mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+              <div className="flex flex-row items-center gap-2 mb-1 font-oswald text-xl font-semibold text-[#0a090b]">
                 <img src="/assets/logonew.png" alt="RecipeForLater" className="h-6 w-6  " />
                 RecipeForLater
               </div>
-              <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">
+              <p className="font-oswald text-lg leading-[22px] text-[#4f4d55]">
                 Smart AI-powered recipe assistant
               </p>
             </div>
             <div className="bg-white px-8 py-5">
-              <div className="mb-1 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+              <div className="mb-1 font-oswald text-xl font-semibold text-[#0a090b]">
                 Other Apps
               </div>
-              <p className="font-['Oswald'] text-lg leading-[22px] text-[#4f4d55]">
+              <p className="font-oswald text-lg leading-[22px] text-[#4f4d55]">
                 Traditional recipe managers
               </p>
             </div>
@@ -158,7 +158,7 @@ export function PricingComparison() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="flex items-center border-t border-r border-[#ececed] bg-white px-8 py-4"
                 >
-                  <span className="font-['Oswald'] text-base font-[550] leading-5 text-[#0a090b]">
+                  <span className="font-oswald text-base font-[550] leading-5 text-[#0a090b]">
                     {feature.name}
                   </span>
                 </motion.div>
@@ -173,7 +173,7 @@ export function PricingComparison() {
                 >
                   {feature.rfl.icon && <IconBadge icon={feature.rfl.icon as any} />}
                   {feature.rfl.text && (
-                    <span className="font-['Oswald'] text-base font-[550] leading-5 text-[#0a090b]">
+                    <span className="font-oswald text-base font-[550] leading-5 text-[#0a090b]">
                       {feature.rfl.text}
                     </span>
                   )}
@@ -189,7 +189,7 @@ export function PricingComparison() {
                 >
                   {feature.other.icon && <IconBadge icon={feature.other.icon as any} />}
                   {feature.other.text && (
-                    <span className="font-['Oswald'] text-base font-[550] leading-5 text-[#0a090b]">
+                    <span className="font-oswald text-base font-[550] leading-5 text-[#0a090b]">
                       {feature.other.text}
                     </span>
                   )}
@@ -207,14 +207,14 @@ export function PricingComparison() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="mb-4 font-['Oswald'] text-2xl font-semibold text-[#0a090b]">
+          <p className="mb-4 font-oswald text-2xl font-semibold text-[#0a090b]">
             We have soooo many more features! 🎉
           </p>
           <motion.button
             onClick={scrollToFeatures}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="rounded-md bg-[#177654] px-8 py-4 font-['Inter'] text-base font-medium text-white shadow-lg transition-all hover:bg-[#145d45]"
+            className="rounded-md bg-[#177654] px-8 py-4 font-inter text-base font-medium text-white shadow-lg transition-all hover:bg-[#145d45]"
           >
             Click here to see them all →
           </motion.button>
@@ -227,7 +227,7 @@ export function PricingComparison() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-8 md:mt-16"
         >
-          <h3 className="mb-6 text-center font-['Oswald'] text-2xl font-semibold leading-[1.2] text-[#0a090b] md:mb-10 md:text-5xl">
+          <h3 className="mb-6 text-center font-oswald text-2xl font-semibold leading-[1.2] text-[#0a090b] md:mb-10 md:text-5xl">
             Key Differentiators
           </h3>
 
@@ -267,10 +267,10 @@ export function PricingComparison() {
                   <Check className="h-4 w-4 text-[#019939] md:h-5 md:w-5" />
                 </div>
                 <div>
-                  <h4 className="mb-1 font-['Inter'] text-base font-semibold leading-[1.2] text-[#0a090b] md:mb-2 md:text-xl">
+                  <h4 className="mb-1 font-inter text-base font-semibold leading-[1.2] text-[#0a090b] md:mb-2 md:text-xl">
                     {item.title}
                   </h4>
-                  <p className="font-['Inter'] text-sm leading-[1.4] text-[#4f4d55] md:text-base md:leading-[22px]">
+                  <p className="font-inter text-sm leading-[1.4] text-[#4f4d55] md:text-base md:leading-[22px]">
                     {item.description}
                   </p>
                 </div>

@@ -42,7 +42,7 @@ export function CTA() {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="font-['Oswald'] text-3xl font-semibold leading-[1.2] tracking-[-1px] text-[#0a090b] md:text-[48px] md:tracking-[-1.44px]"
+                  className="font-oswald text-3xl font-semibold leading-[1.2] tracking-[-1px] text-[#0a090b] md:text-[48px] md:tracking-[-1.44px]"
                 >
                   Stop Losing Recipes.
                   <br />
@@ -54,7 +54,7 @@ export function CTA() {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="font-['Oswald'] text-[24px] font-normal leading-[28px] tracking-[-0.18px] text-[#4f4d55]"
+                  className="font-oswald text-[24px] font-normal leading-[28px] tracking-[-0.18px] text-[#4f4d55]"
                 >
                   Join thousands of cooks who've organized
                   <br />
@@ -80,7 +80,7 @@ export function CTA() {
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#c1f4d4] p-1">
                       <Check className="h-4 w-4 text-[#019939]" />
                     </div>
-                    <span className="font-['Inter'] text-[16px] font-[475] leading-[22px] tracking-[-0.18px] text-[#0a090b]">
+                    <span className="font-inter text-[16px] font-[475] leading-[22px] tracking-[-0.18px] text-[#0a090b]">
                       {item}
                     </span>
                   </div>

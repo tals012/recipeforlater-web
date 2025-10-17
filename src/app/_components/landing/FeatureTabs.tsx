@@ -121,10 +121,10 @@ export function FeatureTabs() {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
+          <h2 className="mb-3 font-oswald text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             Core <span className="text-[#e74c3c]">Features</span> (Detailed)
           </h2>
-          <p className="mx-auto max-w-[900px] font-['Oswald'] text-base font-normal leading-[1.4] text-[#4f4d55] md:text-2xl md:leading-[22px]">
+          <p className="mx-auto max-w-[900px] font-oswald text-base font-normal leading-[1.4] text-[#4f4d55] md:text-2xl md:leading-[22px]">
             Your all-in-one solution for saving and cooking recipes
           </p>
 
@@ -164,7 +164,7 @@ export function FeatureTabs() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab(index)}
-                className={`rounded-lg px-3 py-1.5 font-['Oswald'] text-sm font-medium transition-all md:px-4 md:py-2 md:text-base ${activeTab === index
+                className={`rounded-lg px-3 py-1.5 font-oswald text-sm font-medium transition-all md:px-4 md:py-2 md:text-base ${activeTab === index
                   ? "bg-[#177654] text-white shadow-lg"
                   : "bg-[#f7f4e2] text-[#4f4d55] hover:bg-[#ebe8d4]"
                   }`}
@@ -188,14 +188,14 @@ export function FeatureTabs() {
             {/* Left - Content */}
             <div className="flex flex-col justify-center gap-8">
               <div>
-                <div className="mb-4 inline-block rounded-lg bg-[#f9bd23] px-3 py-1 font-['Oswald'] text-sm font-semibold uppercase tracking-wide text-[#0a090b]">
+                <div className="mb-4 inline-block rounded-lg bg-[#f9bd23] px-3 py-1 font-oswald text-sm font-semibold uppercase tracking-wide text-[#0a090b]">
                   {tabs[activeTab]?.tagline ?? "Feature"}
                 </div>
-                <h3 className="mb-4 font-['Oswald'] text-4xl font-semibold leading-[1.2] text-[#0a090b]">
+                <h3 className="mb-4 font-oswald text-4xl font-semibold leading-[1.2] text-[#0a090b]">
                   {tabs[activeTab]?.title}
                 </h3>
                 {tabs[activeTab]?.description && (
-                  <p className="font-['Oswald'] text-lg leading-[1.6] text-[#4f4d55]">
+                  <p className="font-oswald text-lg leading-[1.6] text-[#4f4d55]">
                     {tabs[activeTab].description}
                   </p>
                 )}
@@ -213,7 +213,7 @@ export function FeatureTabs() {
                     <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#c1f4d4]">
                       <Check className="h-4 w-4 text-[#019939]" />
                     </div>
-                    <span className="font-['Oswald'] text-base text-[#0a090b]">{feature}</span>
+                    <span className="font-oswald text-base text-[#0a090b]">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -225,10 +225,10 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
                     Here's how it works:
                   </p>
-                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                  <p className="font-oswald text-base leading-[1.6] text-[#4f4d55]">
                     Share any recipe link, screenshot, or video to RecipeForLater. Our AI instantly
                     extracts ingredients, steps, and cooking times-organizing everything into a
                     clean, easy-to-follow format.
@@ -243,10 +243,10 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
                     Transform any recipe with a single tap.
                   </p>
-                  <p className="mb-4 font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                  <p className="mb-4 font-oswald text-base leading-[1.6] text-[#4f4d55]">
                     The AI identifies all ingredients that don't fit your diet and automatically replaces them - keeping the structure and steps intact.
                   </p>
                   <div className="flex items-center gap-2">
@@ -285,10 +285,10 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
                     Understand exactly what's on your plate - instantly.
                   </p>
-                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                  <p className="font-oswald text-base leading-[1.6] text-[#4f4d55]">
                     The AI Nutrition Analyzer gives you a complete nutritional snapshot for every recipe you import or create.
                   </p>
                 </motion.div>
@@ -301,10 +301,10 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
                     Plan your week like a pro - organize every meal effortlessly and stay consistent with your goals.
                   </p>
-                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                  <p className="font-oswald text-base leading-[1.6] text-[#4f4d55]">
                     Your recipes, schedule, and shopping list - all connected in one place.
                   </p>
                 </motion.div>
@@ -317,10 +317,10 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
                     Your grocery list - now actually smart.
                   </p>
-                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                  <p className="font-oswald text-base leading-[1.6] text-[#4f4d55]">
                     Automatically combines ingredients from all your planned recipes and keeps everything organized for a smooth shopping experience.
                   </p>
                 </motion.div>
@@ -333,10 +333,10 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
                     Organize and share your favorite recipes - together.
                   </p>
-                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                  <p className="font-oswald text-base leading-[1.6] text-[#4f4d55]">
                     Create curated recipe collections for every occasion and share them instantly with the people you love.
                   </p>
                 </motion.div>
@@ -349,10 +349,10 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
-                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
                     Cook like a pro with clear, bite-size steps - totally hands-free with voice commands.
                   </p>
-                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                  <p className="font-oswald text-base leading-[1.6] text-[#4f4d55]">
                     Enter Story Mode, say "Next" or "Back," and get guided through every instruction on screen and by voice.
                   </p>
                 </motion.div>

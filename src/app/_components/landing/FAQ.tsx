@@ -75,10 +75,10 @@ export function FAQ() {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
+          <h2 className="mb-3 font-oswald text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             Frequently Asked <span className="text-[#e74c3c]">Questions</span>
           </h2>
-          <p className="font-['Oswald'] text-base font-normal leading-[1.2] text-[#4f4d55] md:text-xl">
+          <p className="font-oswald text-base font-normal leading-[1.2] text-[#4f4d55] md:text-xl">
             Everything you need to know about RecipeForLater
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ export function FAQ() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-[#f7f4e2]/30"
               >
-                <span className="pr-8 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+                <span className="pr-8 font-oswald text-xl font-semibold text-[#0a090b]">
                   {faq.question}
                 </span>
                 <motion.div
@@ -124,7 +124,7 @@ export function FAQ() {
                     className="overflow-hidden"
                   >
                     <div className="border-t border-[#ececed] px-6 pb-6 pt-4">
-                      <p className="font-['Oswald'] text-lg leading-[1.6] text-[#4f4d55]">
+                      <p className="font-oswald text-lg leading-[1.6] text-[#4f4d55]">
                         {faq.answer}
                       </p>
                     </div>
@@ -143,17 +143,17 @@ export function FAQ() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 rounded-2xl bg-gradient-to-br from-[#f7f4e2] to-white p-8 text-center"
         >
-          <p className="mb-4 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+          <p className="mb-4 font-oswald text-xl font-semibold text-[#0a090b]">
             Still have questions?
           </p>
-          <p className="mb-6 font-['Oswald'] text-lg text-[#4f4d55]">
+          <p className="mb-6 font-oswald text-lg text-[#4f4d55]">
             We're here to help! Reach out to our support team anytime.
           </p>
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block rounded-lg bg-[#177654] px-8 py-3 font-['Oswald'] text-base font-semibold text-white shadow-lg transition-all hover:bg-[#145d45]"
+            className="inline-block rounded-lg bg-[#177654] px-8 py-3 font-oswald text-base font-semibold text-white shadow-lg transition-all hover:bg-[#145d45]"
           >
             Contact Support
           </motion.a>

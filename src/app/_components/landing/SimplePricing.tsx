@@ -46,13 +46,13 @@ export function SimplePricing() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-3 font-['Oswald'] text-5xl font-semibold leading-[1.2] text-[#0a090b]">
+          <h2 className="mb-3 font-oswald text-5xl font-semibold leading-[1.2] text-[#0a090b]">
             Ridiculously Simple Pricing
           </h2>
-          <p className="font-['Oswald'] text-2xl font-normal leading-[22px] text-[#4f4d55]">
+          <p className="font-oswald text-2xl font-normal leading-[22px] text-[#4f4d55]">
             Try free for 14 days. No credit card required.
           </p>
-          <p className="mt-2 font-['Oswald'] text-lg font-normal leading-[22px] text-[#4f4d55]">
+          <p className="mt-2 font-oswald text-lg font-normal leading-[22px] text-[#4f4d55]">
             Cancel anytime-we promise no hard feelings.
           </p>
         </motion.div>
@@ -71,28 +71,28 @@ export function SimplePricing() {
                 } bg-white p-8 transition-all`}
             >
               {plan.badge && (
-                <div className="absolute right-8 top-8 rounded-full bg-[#f9bd23] px-3 py-1 font-['Oswald'] text-xs font-semibold text-[#0a090b]">
+                <div className="absolute right-8 top-8 rounded-full bg-[#f9bd23] px-3 py-1 font-oswald text-xs font-semibold text-[#0a090b]">
                   {plan.badge}
                 </div>
               )}
 
               <div className="mb-8 flex items-baseline justify-between border-b border-[#ececed] pb-8">
                 <div>
-                  <h3 className="mb-2 font-['Oswald'] text-2xl font-semibold text-[#0a090b]">
+                  <h3 className="mb-2 font-oswald text-2xl font-semibold text-[#0a090b]">
                     {plan.name}
                   </h3>
                   <div className="flex items-baseline gap-2">
-                    <span className="font-['Oswald'] text-5xl font-bold text-[#0a090b]">
+                    <span className="font-oswald text-5xl font-bold text-[#0a090b]">
                       {plan.price}
                     </span>
-                    <span className="font-['Oswald'] text-lg text-[#4f4d55]">{plan.period}</span>
+                    <span className="font-oswald text-lg text-[#4f4d55]">{plan.period}</span>
                   </div>
                 </div>
 
                 <div className="h-px flex-1 bg-[#ececed]" />
 
                 <div className="text-right">
-                  <p className="font-['Oswald'] text-sm font-semibold uppercase tracking-wide text-[#4f4d55]">
+                  <p className="font-oswald text-sm font-semibold uppercase tracking-wide text-[#4f4d55]">
                     Features
                   </p>
                 </div>
@@ -111,7 +111,7 @@ export function SimplePricing() {
                     <div className="flex h-4 w-4 items-center justify-center rounded-full bg-[#e4ffe2]">
                       <Check className="h-3 w-3 text-[#019939]" />
                     </div>
-                    <span className="font-['Oswald'] text-base text-[#0a090b]">{feature}</span>
+                    <span className="font-oswald text-base text-[#0a090b]">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -119,7 +119,7 @@ export function SimplePricing() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 font-['Oswald'] text-base font-semibold transition-all ${plan.popular
+                className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 font-oswald text-base font-semibold transition-all ${plan.popular
                   ? "bg-[#177654] text-white shadow-lg hover:bg-[#145d45]"
                   : "border-2 border-[#177654] text-[#177654] hover:bg-[#177654] hover:text-white"
                   }`}
@@ -139,7 +139,7 @@ export function SimplePricing() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <p className="mb-8 font-['Oswald'] text-xl font-semibold text-[#0a090b]">
+          <p className="mb-8 font-oswald text-xl font-semibold text-[#0a090b]">
             Trusted by 10,000+ home cooks
           </p>
           <div className="flex justify-center gap-12">
@@ -151,7 +151,7 @@ export function SimplePricing() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                  className="font-['Oswald'] text-lg font-medium text-[#4f4d55]"
+                  className="font-oswald text-lg font-medium text-[#4f4d55]"
                 >
                   {text}
                 </motion.div>

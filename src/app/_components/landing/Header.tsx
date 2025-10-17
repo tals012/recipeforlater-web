@@ -62,23 +62,23 @@ export function Header() {
             <nav className="flex items-center gap-2">
               <a
                 href="#home"
-                className="rounded-lg px-2 py-2 font-['Oswald'] text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
+                className="rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
               >
                 Home
               </a>
-              <button className="flex items-center gap-1.5 rounded-lg px-2 py-2 font-['Oswald'] text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50">
+              <button className="flex items-center gap-1.5 rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50">
                 Products
                 <ChevronDown className="h-4 w-4" />
               </button>
               <a
                 href="#pricing"
-                className="rounded-lg px-2 py-2 font-['Oswald'] text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
+                className="rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
               >
                 Pricing
               </a>
               <a
                 href="#faq"
-                className="rounded-lg px-2 py-2 font-['Oswald'] text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
+                className="rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
               >
                 FAQ
               </a>
@@ -86,10 +86,10 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-2">
-              <button className="rounded-md border border-[#e6e6e6] bg-white px-2.5 py-1.5 font-['Oswald'] text-sm font-medium text-[#0c211d] transition-colors hover:bg-gray-50">
+              <button className="rounded-md border border-[#e6e6e6] bg-white px-2.5 py-1.5 font-oswald text-sm font-medium text-[#0c211d] transition-colors hover:bg-gray-50">
                 Watch Demo
               </button>
-              <button className="flex items-center gap-2 rounded-md bg-[#177654] px-2.5 py-1.5 font-['Oswald'] text-sm font-medium text-white transition-colors hover:bg-[#145d45]">
+              <button className="flex items-center gap-2 rounded-md bg-[#177654] px-2.5 py-1.5 font-oswald text-sm font-medium text-white transition-colors hover:bg-[#145d45]">
                 Free Trial
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -125,7 +125,7 @@ export function Header() {
                   transition={{ duration: 0.3, delay: 0.15 }}
                   href="#home"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-['Oswald'] text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
+                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
                   Home
                 </motion.a>
@@ -133,7 +133,7 @@ export function Header() {
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#f7f4e2] px-6 py-4 font-['Oswald'] text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#f7f4e2] px-6 py-4 font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
                   Products
                   <ChevronDown className="h-6 w-6" />
@@ -144,7 +144,7 @@ export function Header() {
                   transition={{ duration: 0.3, delay: 0.25 }}
                   href="#pricing"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-['Oswald'] text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
+                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
                   Pricing
                 </motion.a>
@@ -154,7 +154,7 @@ export function Header() {
                   transition={{ duration: 0.3, delay: 0.3 }}
                   href="#faq"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-['Oswald'] text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
+                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
                   FAQ
                 </motion.a>
@@ -167,10 +167,10 @@ export function Header() {
                 transition={{ duration: 0.3, delay: 0.35 }}
                 className="flex w-full flex-col gap-3"
               >
-                <button className="w-full rounded-2xl border-2 border-[#177654] bg-white px-6 py-4 font-['Oswald'] text-lg font-semibold text-[#177654] transition-all hover:bg-gray-50">
+                <button className="w-full rounded-2xl border-2 border-[#177654] bg-white px-6 py-4 font-oswald text-lg font-semibold text-[#177654] transition-all hover:bg-gray-50">
                   Watch Demo
                 </button>
-                <button className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#177654] px-6 py-4 font-['Oswald'] text-lg font-semibold text-white transition-all hover:bg-[#145d45]">
+                <button className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#177654] px-6 py-4 font-oswald text-lg font-semibold text-white transition-all hover:bg-[#145d45]">
                   Free Trial
                   <ArrowRight className="h-5 w-5" />
                 </button>

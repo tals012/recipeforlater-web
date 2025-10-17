@@ -56,10 +56,10 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center md:mb-16"
         >
-          <h2 className="mb-3 font-['Oswald'] text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
+          <h2 className="mb-3 font-oswald text-3xl font-semibold leading-[1.2] text-[#0a090b] md:text-5xl">
             <span className="text-[#e74c3c]">Loved</span> By Home Cooks Everywhere
           </h2>
-          <p className="font-['Oswald'] text-base font-normal leading-[1.4] text-[#4f4d55] md:text-2xl md:leading-[22px]">
+          <p className="font-oswald text-base font-normal leading-[1.4] text-[#4f4d55] md:text-2xl md:leading-[22px]">
             Join thousands who've organized their cooking life
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export function Testimonials() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-8 font-['Oswald'] text-3xl font-light leading-[1.4] text-[#0a090b]"
+                    className="mb-8 font-oswald text-3xl font-light leading-[1.4] text-[#0a090b]"
                   >
                     "{testimonials[currentIndex]?.quote}"
                   </motion.blockquote>
@@ -120,10 +120,10 @@ export function Testimonials() {
                         </span>
                       </div>
                       <div>
-                        <p className="font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                        <p className="font-oswald text-lg font-semibold text-[#0a090b]">
                           {testimonials[currentIndex]?.name}
                         </p>
-                        <p className="font-['Oswald'] text-base text-[#4f4d55]">
+                        <p className="font-oswald text-base text-[#4f4d55]">
                           {testimonials[currentIndex]?.role}
                         </p>
                       </div>

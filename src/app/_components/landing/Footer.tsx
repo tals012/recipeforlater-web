@@ -21,7 +21,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <img src="/assets/logo.png" alt="RecipeForLater" className="h-8 w-auto" />
               <div className="flex items-center gap-2">
-                <span className="font-['Oswald'] text-xl font-bold text-white">
+                <span className="font-oswald text-xl font-bold text-white">
                   RecipeForLater
                 </span>
               </div>
@@ -38,17 +38,17 @@ export function Footer() {
           >
             <a
               href="/privacy"
-              className="font-['Oswald'] text-base text-white/70 transition-colors hover:text-white"
+              className="font-oswald text-base text-white/70 transition-colors hover:text-white"
             >
               Privacy Policy
             </a>
             <a
               href="/terms"
-              className="font-['Oswald'] text-base text-white/70 transition-colors hover:text-white"
+              className="font-oswald text-base text-white/70 transition-colors hover:text-white"
             >
               Terms of Service
             </a>
-            <span className="font-['Oswald'] text-base text-white/50">
+            <span className="font-oswald text-base text-white/50">
               © {currentYear} RecipeForLater
             </span>
           </motion.div>
