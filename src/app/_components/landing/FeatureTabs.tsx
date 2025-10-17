@@ -61,18 +61,21 @@ const tabs = [
     id: "planner",
     title: "Smart Meal Planner",
     features: [
-      "Weekly meal planning",
-      "Auto-generate shopping lists",
-      "Dietary preferences included",
+      "Weekly Meal Planning: Easily plan breakfast, lunch, and dinner for the entire week",
+      "Auto Sync with Shopping List: Ingredients are automatically added to your Smart Shopping List",
+      "Shared Family Access: Share plans and collections with family or friends",
+      "AI Suggestions: Get smart recipe recommendations based on your diet and preferences",
+      "Flexible Editing: Drag, swap, or update meals anytime — everything stays in sync",
     ],
   },
   {
     id: "grocery",
     title: "Intelligent Grocery List",
     features: [
-      "Combines ingredients from multiple recipes",
-      "Organizes by store aisle",
-      "Share with family",
+      "Auto-Combine Ingredients: Merges items from multiple recipes into one clean list",
+      "Organized by Store Aisle: Grouped by category for faster shopping",
+      "Smart Adjustments: Updates quantities when you change servings or remove meals",
+      "Shared Lists: Share with family or roommates so everyone stays synced",
     ],
   },
   {
@@ -242,6 +245,12 @@ export function FeatureTabs() {
                   transition={{ delay: 0.5 }}
                   className="pt-4"
                 >
+                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                    Transform any recipe with a single tap.
+                  </p>
+                  <p className="mb-4 font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                    The AI identifies all ingredients that don't fit your diet and automatically replaces them — keeping the structure and steps intact.
+                  </p>
                   <div className="flex items-center gap-2">
                     <motion.img
                       initial={{ x: -20, opacity: 0 }}
@@ -270,6 +279,54 @@ export function FeatureTabs() {
                   </div>
                 </motion.div>
               )}
+
+              {tabs[activeTab]?.id === "nutrition" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
+                >
+                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                    Understand exactly what's on your plate - instantly.
+                  </p>
+                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                    The AI Nutrition Analyzer gives you a complete nutritional snapshot for every recipe you import or create.
+                  </p>
+                </motion.div>
+              )}
+
+              {tabs[activeTab]?.id === "planner" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
+                >
+                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                    Plan your week like a pro — organize every meal effortlessly and stay consistent with your goals.
+                  </p>
+                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                    Your recipes, schedule, and shopping list — all connected in one place.
+                  </p>
+                </motion.div>
+              )}
+
+              {tabs[activeTab]?.id === "grocery" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
+                >
+                  <p className="mb-3 font-['Oswald'] text-lg font-semibold text-[#0a090b]">
+                    Your grocery list — now actually smart.
+                  </p>
+                  <p className="font-['Oswald'] text-base leading-[1.6] text-[#4f4d55]">
+                    Automatically combines ingredients from all your planned recipes and keeps everything organized for a smooth shopping experience.
+                  </p>
+                </motion.div>
+              )}
             </div>
 
             {/* Right - Visual */}
@@ -296,6 +353,24 @@ export function FeatureTabs() {
                   <img
                     src="/assets/lang.png"
                     alt="Smart Translation"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "nutrition" ? (
+                  <img
+                    src="/assets/nutrition.png"
+                    alt="AI Nutrition Analyzer"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "planner" ? (
+                  <img
+                    src="/assets/weeklyplan.png"
+                    alt="Smart Meal Planner"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "grocery" ? (
+                  <img
+                    src="/assets/shopping_list.png"
+                    alt="Intelligent Grocery List"
                     className="h-auto w-full max-w-[500px] object-contain"
                   />
                 ) : (
