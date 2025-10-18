@@ -86,7 +86,7 @@ export function PricingComparison() {
   const scrollToFeatures = () => {
     // Find the FeatureTabs section by looking for its unique heading
     const featureTabsSection = Array.from(document.querySelectorAll('h2')).find(
-      (h2) => h2.textContent?.includes('Key Differentiators')
+      (h2) => h2.textContent?.includes('Core') && h2.textContent?.includes('Features')
     )?.closest('section');
 
     if (featureTabsSection) {

@@ -6,6 +6,7 @@ import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false);
@@ -14,6 +15,13 @@ export function Header() {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    }, 300);
+  };
+
+  const openVideoModal = () => {
+    setIsMobileMenuOpen(false);
+    setTimeout(() => {
+      setIsVideoModalOpen(true);
     }, 300);
   };
 
@@ -117,12 +125,11 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-2">
-              <button className="rounded-md border border-[#e6e6e6] bg-white px-2.5 py-1.5 font-oswald text-sm font-medium text-[#0c211d] transition-colors hover:bg-gray-50">
+              <button
+                onClick={openVideoModal}
+                className="rounded-md border border-[#e6e6e6] bg-white px-2.5 py-1.5 font-oswald text-sm font-medium text-[#0c211d] transition-colors hover:bg-gray-50"
+              >
                 Watch Demo
-              </button>
-              <button className="flex items-center gap-2 rounded-md bg-[#177654] px-2.5 py-1.5 font-oswald text-sm font-medium text-white transition-colors hover:bg-[#145d45]">
-                Free Trial
-                <ArrowRight className="h-4 w-4" />
               </button>
             </div>
           </div>
@@ -195,14 +202,55 @@ export function Header() {
                 transition={{ duration: 0.3, delay: 0.35 }}
                 className="flex w-full flex-col gap-3"
               >
-                <button className="w-full rounded-2xl border-2 border-[#177654] bg-white px-6 py-4 font-oswald text-lg font-semibold text-[#177654] transition-all hover:bg-gray-50">
+                <button
+                  onClick={openVideoModal}
+                  className="w-full rounded-2xl border-2 border-[#177654] bg-white px-6 py-4 font-oswald text-lg font-semibold text-[#177654] transition-all hover:bg-gray-50"
+                >
                   Watch Demo
                 </button>
-                <button className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#177654] px-6 py-4 font-oswald text-lg font-semibold text-white transition-all hover:bg-[#145d45]">
-                  Free Trial
-                  <ArrowRight className="h-5 w-5" />
-                </button>
               </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {isVideoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsVideoModalOpen(false)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsVideoModalOpen(false)}
+                className="absolute -right-4 -top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all hover:scale-110 hover:bg-gray-100"
+              >
+                <X className="h-5 w-5 text-gray-800" />
+              </button>
+
+              {/* Video Container */}
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black">
+                <video
+                  autoPlay
+                  controls
+                  className="h-full w-full object-contain"
+                  src="/videos/v1/exmaple_hero_vid.mp4"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </motion.div>
           </motion.div>
         )}
