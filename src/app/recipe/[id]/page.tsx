@@ -5,10 +5,17 @@ import { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Users, ChefHat, Star } from "lucide-react";
 
+interface Ingredient {
+    id: string;
+    name: string;
+    thumbnailUrl: string;
+}
+
 interface Recipe {
     id: string;
     title: string;
     imageUrl: string;
+    ingredients?: Ingredient[];
     totalTime?: string;
     servings?: number;
     difficulty?: string;
@@ -31,12 +38,13 @@ const getRecipe = async (id: string): Promise<Recipe> => {
         // Fallback to mock data if API fails
         return {
             id,
-            title: "Roasted Eggplant Rolls",
-            imageUrl: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=1200&q=80",
-            totalTime: "1 h 30 Minutes",
-            servings: 4,
-            difficulty: "Easy",
-            rating: 5.0,
+            title: "Recipe Loading...",
+            imageUrl: "/assets/recipe_placeholder.png",
+            ingredients: [],
+            totalTime: undefined,
+            servings: undefined,
+            difficulty: undefined,
+            rating: undefined,
         };
     }
 };
@@ -183,18 +191,64 @@ function RecipeContent() {
                         )}
                     </div>
 
+                    {/* Ingredients Preview */}
+                    {recipe.ingredients && recipe.ingredients.length > 0 && (
+                        <motion.div
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.4 }}
+                            className="rounded-2xl bg-white p-6 shadow-sm"
+                        >
+                            <h2 className="mb-4 font-oswald text-xl font-semibold text-[#0a090b]">
+                                Ingredients Preview
+                            </h2>
+                            <div className="space-y-3">
+                                {recipe.ingredients.map((ingredient, index) => (
+                                    <motion.div
+                                        key={ingredient.id}
+                                        initial={{ x: -20, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        transition={{ delay: 0.5 + index * 0.1 }}
+                                        className="flex items-center gap-3"
+                                    >
+                                        <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-[#f7f4e2]">
+                                            <img
+                                                src={ingredient.thumbnailUrl}
+                                                alt={ingredient.name}
+                                                className="h-full w-full object-cover"
+                                            />
+                                        </div>
+                                        <p className="font-oswald text-base text-[#0a090b]">
+                                            {ingredient.name}
+                                        </p>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Blur overlay to indicate more content */}
+                            <div className="relative mt-4 overflow-hidden rounded-lg bg-gradient-to-b from-transparent to-white p-4">
+                                <div className="absolute inset-0 backdrop-blur-sm" />
+                                <div className="relative text-center">
+                                    <p className="font-oswald text-sm text-[#7f7d83]">
+                                        + More ingredients...
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+
                     {/* CTA Section */}
                     <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.4 }}
+                        transition={{ delay: 0.6 }}
                         className="rounded-2xl bg-[#f7f4e2] p-6 md:p-8"
                     >
                         <h2 className="mb-4 font-oswald text-2xl font-semibold text-[#0a090b]">
-                            View Full Recipe
+                            🔒 Download to View Full Recipe
                         </h2>
                         <p className="mb-6 font-oswald text-base leading-relaxed text-[#4f4d55]">
-                            Get the complete recipe with ingredients, step-by-step instructions, and cooking tips in the RecipeForLater app.
+                            Get the complete recipe with all ingredients, step-by-step instructions, cooking tips, and hands-free voice control in the RecipeForLater app.
                         </p>
 
                         <motion.button

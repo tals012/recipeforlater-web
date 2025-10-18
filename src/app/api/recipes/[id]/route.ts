@@ -10,6 +10,8 @@ export async function GET(
   try {
     const { id } = params;
 
+    console.log(`[Recipe API] Fetching recipe ${id} from ${BACKEND_API_URL}`);
+
     // Fetch from your backend API
     const response = await fetch(`${BACKEND_API_URL}/api/recipes/${id}/summary`, {
       headers: {
@@ -17,6 +19,8 @@ export async function GET(
       },
       cache: 'no-store', // Always fetch fresh data
     });
+
+    console.log(`[Recipe API] Backend response status: ${response.status}`);
 
     if (!response.ok) {
       if (response.status === 404) {
@@ -31,10 +35,12 @@ export async function GET(
           { status: 403 }
         );
       }
+      console.error(`[Recipe API] Backend error: ${response.status}`);
       throw new Error(`Backend API error: ${response.status}`);
     }
 
     const result = await response.json();
+    console.log(`[Recipe API] Backend response:`, result);
     
     if (!result.success || !result.data) {
       throw new Error("Invalid response from backend");
@@ -45,6 +51,7 @@ export async function GET(
       id: result.data.id,
       title: result.data.title,
       imageUrl: result.data.thumbnailUrl,
+      ingredients: result.data.ingredients || [],
       // These fields are optional and not provided by the summary endpoint
       // You can add them later if needed
       totalTime: undefined,
@@ -53,9 +60,10 @@ export async function GET(
       rating: undefined,
     };
 
+    console.log(`[Recipe API] Returning recipe:`, recipe);
     return NextResponse.json(recipe);
   } catch (error) {
-    console.error("Error fetching recipe:", error);
+    console.error("[Recipe API] Error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
