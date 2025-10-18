@@ -1,8 +1,39 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
+
+// Tooltip component
+const Tooltip = ({ children, text }: { children: React.ReactNode; text: string }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <div className="relative inline-block">
+      <div
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+        onClick={() => setIsVisible(!isVisible)}
+      >
+        {children}
+      </div>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.2 }}
+            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-sm rounded-lg whitespace-nowrap z-50 pointer-events-none"
+          >
+            {text}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 export function CTA() {
   return (
@@ -107,18 +138,19 @@ export function CTA() {
                     className="h-full w-full object-contain"
                   />
                 </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="h-10 w-[138px] cursor-pointer"
-                >
-                  <img
-                    src="/assets/google_store.png"
-                    alt="Get it on Google Play"
-                    className="h-full w-full object-contain"
-                  />
-                </motion.a>
+                <Tooltip text="Soon">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="h-10 w-[138px] cursor-pointer"
+                  >
+                    <img
+                      src="/assets/google_store.png"
+                      alt="Get it on Google Play"
+                      className="h-full w-full object-contain"
+                    />
+                  </motion.div>
+                </Tooltip>
               </motion.div>
             </motion.div>
           </div>
