@@ -277,11 +277,11 @@ export function Hero() {
               </button>
 
               {/* Video Container */}
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black">
                 <video
                   autoPlay
                   controls
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                   src="/videos/v1/exmaple_hero_vid.mp4"
                 >
                   Your browser does not support the video tag.
