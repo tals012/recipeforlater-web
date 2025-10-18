@@ -151,7 +151,7 @@ export function NotificationStack() {
                             initial={{ maxHeight: 0, opacity: 0 }}
                             animate={{ maxHeight: 200, opacity: 1 }}
                             exit={{ maxHeight: 0, opacity: 0 }}
-                            transition={{ 
+                            transition={{
                                 duration: 0.4,
                                 ease: [0.4, 0.0, 0.2, 1]
                             }}
