@@ -203,7 +203,7 @@ export function Hero() {
                 className="h-full w-auto object-contain"
                 style={{ background: 'transparent' }}
               >
-                <source src="/videos/v1/hero_new.mp4" type="video/mp4" />
+
                 <source src="/videos/v1/hero_video_new1.webm" type="video/webm" />
                 Your browser does not support the video tag.
               </video>
