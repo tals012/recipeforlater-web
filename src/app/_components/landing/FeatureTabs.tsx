@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Check } from "lucide-react";
 
 const tabs = [
@@ -109,6 +109,18 @@ const tabs = [
 
 export function FeatureTabs() {
   const [activeTab, setActiveTab] = useState(0);
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(tabsContainerRef, { once: true, amount: 0.2 });
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    if (isInView && !shouldAnimate) {
+      // Small delay to ensure the component is mounted
+      setTimeout(() => {
+        setShouldAnimate(true);
+      }, 300);
+    }
+  }, [isInView, shouldAnimate]);
 
   return (
     <section className="bg-white px-4 py-12 md:px-[120px] md:py-20">
@@ -156,8 +168,22 @@ export function FeatureTabs() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="mb-6 -mx-4 overflow-x-auto overflow-y-hidden px-4 md:mx-0 md:px-0 md:mb-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <div className="flex gap-2 min-w-max md:min-w-0 md:flex-wrap md:gap-4">
+        <div
+          ref={tabsContainerRef}
+          className="mb-6 -mx-4 overflow-x-auto overflow-y-hidden px-4 md:mx-0 md:px-0 md:mb-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          <motion.div
+            className="flex gap-2 min-w-max md:min-w-0 md:flex-wrap md:gap-4"
+            initial={{ x: 0 }}
+            animate={shouldAnimate ? {
+              x: [0, -40, 0],
+            } : { x: 0 }}
+            transition={{
+              duration: 1.5,
+              ease: [0.25, 0.1, 0.25, 1],
+              times: [0, 0.4, 1],
+            }}
+          >
             {tabs.map((tab, index) => (
               <motion.button
                 key={tab.id}
@@ -172,7 +198,7 @@ export function FeatureTabs() {
                 {tab.title}
               </motion.button>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Tab Content */}
