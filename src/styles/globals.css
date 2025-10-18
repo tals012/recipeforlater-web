@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Darkmode Off CC Hebrew Font */
+@font-face {
+  font-family: 'Darkmode Off CC';
+  src: url('/assets/fonts/Darkmode Off CC Hebr Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Darkmode Off CC';
+  src: url('/assets/fonts/Darkmode Off CC Hebr Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Darkmode Off CC';
+  src: url('/assets/fonts/Darkmode Off CC Hebr SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Darkmode Off CC';
+  src: url('/assets/fonts/Darkmode Off CC Hebr Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
   max-width: 100%;
@@ -22,4 +51,8 @@ body {
 
 .font-inter {
   font-family: var(--font-inter), 'Inter', sans-serif !important;
+}
+
+.font-darkmode {
+  font-family: 'Darkmode Off CC', system-ui, -apple-system, sans-serif !important;
 }

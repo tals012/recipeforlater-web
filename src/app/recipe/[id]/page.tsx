@@ -145,10 +145,10 @@ function RecipeContent() {
                     className="mx-auto max-w-4xl"
                 >
                     {/* Title */}
-                    <h1 className="mb-2 font-oswald text-3xl font-semibold leading-tight text-[#0a090b] md:text-5xl">
+                    <h1 className="mb-2 font-darkmode text-3xl font-bold leading-tight text-[#0a090b] md:text-5xl">
                         {recipe.title}
                     </h1>
-                    <p className="mb-6 font-oswald text-base text-[#7f7d83]">
+                    <p className="mb-0 font-oswald text-base text-[#7f7d83]">
                         by recipeforlater_app
                     </p>
 
@@ -197,9 +197,9 @@ function RecipeContent() {
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.4 }}
-                            className="rounded-2xl bg-white p-6 shadow-sm"
+                            className="rounded-2xl bg-white p-0 shadow-sm"
                         >
-                            <h2 className="mb-4 font-oswald text-xl font-semibold text-[#0a090b]">
+                            <h2 className="mb-4 font-darkmode text-xl font-semibold text-[#0a090b]">
                                 Ingredients Preview
                             </h2>
                             <div className="space-y-3">
@@ -211,14 +211,14 @@ function RecipeContent() {
                                         transition={{ delay: 0.5 + index * 0.1 }}
                                         className="flex items-center gap-3"
                                     >
-                                        <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-[#f7f4e2]">
+                                        <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg">
                                             <img
                                                 src={ingredient.thumbnailUrl}
                                                 alt={ingredient.name}
-                                                className="h-full w-full object-cover"
+                                                className="h-full w-full object-contain rounded-full"
                                             />
                                         </div>
-                                        <p className="font-oswald text-base text-[#0a090b]">
+                                        <p className="font-darkmode text-base text-[#0a090b]">
                                             {ingredient.name}
                                         </p>
                                     </motion.div>
@@ -229,7 +229,7 @@ function RecipeContent() {
                             <div className="relative mt-4 overflow-hidden rounded-lg bg-gradient-to-b from-transparent to-white p-4">
                                 <div className="absolute inset-0 backdrop-blur-sm" />
                                 <div className="relative text-center">
-                                    <p className="font-oswald text-sm text-[#7f7d83]">
+                                    <p className="font-darkmode text-sm text-[#7f7d83]">
                                         + More ingredients...
                                     </p>
                                 </div>
