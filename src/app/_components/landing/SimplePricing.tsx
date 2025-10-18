@@ -143,7 +143,7 @@ export function SimplePricing() {
             Trusted by 10,000+ home cooks
           </p>
           <div className="flex justify-center gap-12">
-            {["⭐ 4.9/5 on App Store", "⭐ 4.8/5 on Google Play", "✓ 14-day money-back guarantee"].map(
+            {["⭐ 4.9/5 on App Store", "⭐ 4.8/5 on Google Play", "✓ 7-day money-back guarantee"].map(
               (text, i) => (
                 <motion.div
                   key={i}

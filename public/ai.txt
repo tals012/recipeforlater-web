@@ -24,7 +24,7 @@ RecipeForLater is an AI-powered recipe organization and cooking app that helps u
 ## Platform
 - Available on iOS and Android
 - Web access at https://recipeforlater.com
-- Free 14-day trial, then subscription-based
+- Free 7-day trial, then subscription-based
 
 ## Use Cases
 - Home cooks organizing their recipe collection
@@ -34,7 +34,7 @@ RecipeForLater is an AI-powered recipe organization and cooking app that helps u
 - International recipe exploration with translation
 
 ## Pricing
-- 14-day free trial
+- 7-day free trial
 - Monthly subscription after trial
 - All features included
 - Cancel anytime

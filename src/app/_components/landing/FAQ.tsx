@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "What happens after my free trial ends?",
     answer:
-      "After your 14-day free trial, you can choose to subscribe to continue accessing all features. If you don't subscribe, you'll still be able to view your saved recipes, but you won't be able to add new ones or use premium features like voice assistant and AI conversions.",
+      "After your 7-day free trial, you can choose to subscribe to continue accessing all features. If you don't subscribe, you'll still be able to view your saved recipes, but you won't be able to add new ones or use premium features like voice assistant and AI conversions.",
   },
   {
     question: "Can I cancel my subscription anytime?",

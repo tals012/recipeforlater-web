@@ -11,6 +11,7 @@ export const env = createEnv({
       .enum(["development", "test", "production"])
       .default("development"),
     RESEND_API_KEY: z.string().min(1),
+    BACKEND_API_URL: z.string().url().default("https://api.recipeforlater.com"),
   },
 
   /**
@@ -35,6 +36,7 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
+    BACKEND_API_URL: process.env.BACKEND_API_URL,
     NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
     NEXT_PUBLIC_APP_DESCRIPTION: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
     NEXT_PUBLIC_IOS_APP_STORE_LINK: process.env.NEXT_PUBLIC_IOS_APP_STORE_LINK,

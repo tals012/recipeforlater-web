@@ -1,28 +1,44 @@
 "use client";
 
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useEffect, useState, Suspense } from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight, Clock, Users, ChefHat, Star } from "lucide-react";
 
-// Placeholder recipe data for demo
-// In a real app, you would fetch this from your API
 interface Recipe {
     id: string;
     title: string;
-    cookingTime?: string;
-    imageUrl?: string;
-    description?: string;
+    imageUrl: string;
+    totalTime?: string;
+    servings?: number;
+    difficulty?: string;
+    rating?: number;
 }
 
 const getRecipe = async (id: string): Promise<Recipe> => {
-    // This would be replaced with a real API call
-    return {
-        id,
-        title: `Recipe ${id}`,
-        cookingTime: "30 minutes",
-        imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
-        description: "This is a delicious recipe you can make at home.",
-    };
+    try {
+        const response = await fetch(`/api/recipes/${id}`, {
+            cache: 'no-store', // Always fetch fresh data
+        });
+
+        if (!response.ok) {
+            throw new Error('Recipe not found');
+        }
+
+        return response.json();
+    } catch (error) {
+        console.error('Error fetching recipe:', error);
+        // Fallback to mock data if API fails
+        return {
+            id,
+            title: "Roasted Eggplant Rolls",
+            imageUrl: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=1200&q=80",
+            totalTime: "1 h 30 Minutes",
+            servings: 4,
+            difficulty: "Easy",
+            rating: 5.0,
+        };
+    }
 };
 
 function RecipeContent() {
@@ -30,7 +46,6 @@ function RecipeContent() {
     const id = params.id as string;
     const [recipe, setRecipe] = useState<Recipe | null>(null);
     const [loading, setLoading] = useState(true);
-    const [redirecting, setRedirecting] = useState(false);
 
     useEffect(() => {
         const loadRecipe = async () => {
@@ -47,19 +62,6 @@ function RecipeContent() {
         loadRecipe();
     }, [id]);
 
-    useEffect(() => {
-        if (recipe) {
-            // Redirect to app after a short delay
-            const timer = setTimeout(() => {
-                setRedirecting(true);
-                const appDeepLink = `recipeforlater://recipe/${id}`;
-                window.location.href = appDeepLink;
-            }, 1500);
-
-            return () => clearTimeout(timer);
-        }
-    }, [recipe, id]);
-
     const handleOpenInApp = () => {
         const appDeepLink = `recipeforlater://recipe/${id}`;
         window.location.href = appDeepLink;
@@ -75,79 +77,169 @@ function RecipeContent() {
 
     if (loading) {
         return (
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
-                <h1 className="text-2xl font-bold">Loading recipe...</h1>
+            <div className="flex min-h-screen flex-col items-center justify-center bg-[#f7f4e2]">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center"
+                >
+                    <div className="h-12 w-12 mx-auto mb-4 border-4 border-[#177654] border-t-transparent rounded-full animate-spin" />
+                    <h1 className="font-oswald text-2xl font-semibold text-[#0a090b]">Loading recipe...</h1>
+                </motion.div>
             </div>
         );
     }
 
     if (!recipe) {
         return (
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
-                <h1 className="text-2xl font-bold">Recipe not found</h1>
+            <div className="flex min-h-screen flex-col items-center justify-center bg-[#f7f4e2]">
+                <h1 className="font-oswald text-2xl font-semibold text-[#0a090b]">Recipe not found</h1>
             </div>
         );
     }
 
     return (
-        <div className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-brand-bgTop to-brand-bgBottom text-gray-900">
-            <div className="w-full max-w-2xl p-6 space-y-6">
-                {recipe.imageUrl && (
-                    <div className="relative w-full h-64 overflow-hidden rounded-lg">
-                        <Image
-                            src={recipe.imageUrl}
-                            alt={recipe.title}
-                            fill
-                            priority
-                            className="object-cover"
-                        />
+        <div className="min-h-screen bg-[#f7f4e2]">
+            {/* Hero Image */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden"
+            >
+                <img
+                    src={recipe.imageUrl}
+                    alt={recipe.title}
+                    className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+                {/* Rating Badge */}
+                {recipe.rating && (
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.3, type: "spring" }}
+                        className="absolute bottom-6 right-6 flex items-center gap-2 bg-[#177654] text-white px-4 py-2 rounded-full shadow-lg"
+                    >
+                        <Star className="h-5 w-5 fill-current" />
+                        <span className="font-oswald text-lg font-semibold">{recipe.rating}</span>
+                    </motion.div>
+                )}
+            </motion.div>
+
+            {/* Content */}
+            <div className="relative -mt-8 rounded-t-3xl bg-white px-6 py-8 md:px-12">
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="mx-auto max-w-4xl"
+                >
+                    {/* Title */}
+                    <h1 className="mb-2 font-oswald text-3xl font-semibold leading-tight text-[#0a090b] md:text-5xl">
+                        {recipe.title}
+                    </h1>
+                    <p className="mb-6 font-oswald text-base text-[#7f7d83]">
+                        by recipeforlater_app
+                    </p>
+
+                    {/* Recipe Info */}
+                    <div className="mb-8 flex flex-wrap items-center gap-6">
+                        {recipe.totalTime && (
+                            <div className="flex items-center gap-2">
+                                <Clock className="h-5 w-5 text-[#7f7d83]" />
+                                <div>
+                                    <p className="font-oswald text-xs text-[#7f7d83]">Total Time</p>
+                                    <p className="font-oswald text-base font-medium text-[#0a090b]">
+                                        {recipe.totalTime}
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+
+                        {recipe.difficulty && (
+                            <div className="flex items-center gap-2">
+                                <ChefHat className="h-5 w-5 text-[#7f7d83]" />
+                                <div>
+                                    <p className="font-oswald text-xs text-[#7f7d83]">Difficulty</p>
+                                    <p className="font-oswald text-base font-medium text-[#0a090b]">
+                                        {recipe.difficulty}
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+
+                        {recipe.servings && (
+                            <div className="flex items-center gap-2">
+                                <Users className="h-5 w-5 text-[#7f7d83]" />
+                                <div>
+                                    <p className="font-oswald text-xs text-[#7f7d83]">Servings</p>
+                                    <p className="font-oswald text-base font-medium text-[#0a090b]">
+                                        {recipe.servings}
+                                    </p>
+                                </div>
+                            </div>
+                        )}
                     </div>
-                )}
-                <h1 className="text-3xl font-bold">{recipe.title}</h1>
 
-                {recipe.cookingTime && (
-                    <div className="flex items-center space-x-2">
-                        <span>⏱️</span>
-                        <span>{recipe.cookingTime}</span>
-                    </div>
-                )}
+                    {/* CTA Section */}
+                    <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.4 }}
+                        className="rounded-2xl bg-[#f7f4e2] p-6 md:p-8"
+                    >
+                        <h2 className="mb-4 font-oswald text-2xl font-semibold text-[#0a090b]">
+                            View Full Recipe
+                        </h2>
+                        <p className="mb-6 font-oswald text-base leading-relaxed text-[#4f4d55]">
+                            Get the complete recipe with ingredients, step-by-step instructions, and cooking tips in the RecipeForLater app.
+                        </p>
 
-                {recipe.description && (
-                    <p className="text-lg">{recipe.description}</p>
-                )}
-
-                <div className="mt-8 space-y-4">
-                    {redirecting ? (
-                        <div className="p-4 bg-brand-primary bg-opacity-10 text-brand-primary rounded-lg">
-                            <p className="text-lg font-medium">Redirecting to RecipeForLater app...</p>
-                        </div>
-                    ) : (
-                        <button
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                             onClick={handleOpenInApp}
-                            className="w-full py-3 px-4 bg-brand-primary text-white rounded-lg font-medium hover:bg-brand-primaryDark transition"
+                            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#177654] px-6 py-4 font-oswald text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#145d45]"
                         >
-                            Open in RecipeForLater app
-                        </button>
-                    )}
+                            Open in App
+                            <ArrowRight className="h-5 w-5" />
+                        </motion.button>
 
-                    <div className="border-t border-white border-opacity-20 pt-4 mt-4">
-                        <p className="text-center mb-4">Don't have the app yet?</p>
-                        <div className="grid grid-cols-2 gap-4">
-                            <button
-                                onClick={() => handleDownloadApp('ios')}
-                                className="py-3 px-4 bg-brand-primary text-white rounded-lg font-medium hover:bg-brand-primaryDark transition"
-                            >
-                                App Store
-                            </button>
-                            <button
-                                onClick={() => handleDownloadApp('android')}
-                                className="py-3 px-4 bg-brand-primary text-white rounded-lg font-medium hover:bg-brand-primaryDark transition"
-                            >
-                                Google Play
-                            </button>
+                        <div className="mt-8 border-t border-[#ececed] pt-6">
+                            <p className="mb-4 text-center font-oswald text-base text-[#4f4d55]">
+                                Don't have the app yet?
+                            </p>
+                            <div className="flex items-center justify-center gap-3">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={() => handleDownloadApp('ios')}
+                                    className="h-10 w-[138px] cursor-pointer"
+                                >
+                                    <img
+                                        src="/assets/app-store.svg"
+                                        alt="Download on App Store"
+                                        className="h-full w-full object-contain"
+                                    />
+                                </motion.button>
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={() => handleDownloadApp('android')}
+                                    className="h-10 w-[138px] cursor-pointer"
+                                >
+                                    <img
+                                        src="/assets/google_store.png"
+                                        alt="Get it on Google Play"
+                                        className="h-full w-full object-contain"
+                                    />
+                                </motion.button>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </div>
     );
@@ -156,11 +248,11 @@ function RecipeContent() {
 export default function RecipePage() {
     return (
         <Suspense fallback={
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-                <h1 className="text-2xl font-bold">Loading...</h1>
+            <div className="flex min-h-screen flex-col items-center justify-center bg-[#f7f4e2]">
+                <div className="h-12 w-12 border-4 border-[#177654] border-t-transparent rounded-full animate-spin" />
             </div>
         }>
             <RecipeContent />
         </Suspense>
     );
-} 
+}

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: "RecipeForLater - Save, Organize & Cook Any Recipe with AI Voice Assistant",
     template: "%s | RecipeForLater"
   },
-  description: "The ultimate recipe app with AI-powered voice assistant, diet conversions, and smart meal planning. Save recipes from any website, Instagram, TikTok. Cook hands-free with voice control. Free 14-day trial.",
+  description: "The ultimate recipe app with AI-powered voice assistant, diet conversions, and smart meal planning. Save recipes from any website, Instagram, TikTok. Cook hands-free with voice control. Free 7-day trial.",
   keywords: [
     "recipe app",
     "recipe organizer",
