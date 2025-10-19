@@ -148,12 +148,10 @@ function RecipeContent() {
                     <h1 className="mb-2 font-darkmode text-3xl font-bold leading-tight text-[#0a090b] md:text-5xl">
                         {recipe.title}
                     </h1>
-                    <p className="mb-0 font-oswald text-base text-[#7f7d83]">
-                        by recipeforlater_app
-                    </p>
+
 
                     {/* Recipe Info */}
-                    <div className="mb-8 flex flex-wrap items-center gap-6">
+                    <div className="mb-0 flex flex-wrap items-center gap-6">
                         {recipe.totalTime && (
                             <div className="flex items-center gap-2">
                                 <Clock className="h-5 w-5 text-[#7f7d83]" />
@@ -199,7 +197,7 @@ function RecipeContent() {
                             transition={{ delay: 0.4 }}
                             className="rounded-2xl bg-white p-0 shadow-sm"
                         >
-                            <h2 className="mb-4 font-darkmode text-xl font-semibold text-[#0a090b]">
+                            <h2 className="mb-4 font-darkmode text-medium font-semibold text-[#0a090b]">
                                 Ingredients Preview
                             </h2>
                             <div className="space-y-3">
