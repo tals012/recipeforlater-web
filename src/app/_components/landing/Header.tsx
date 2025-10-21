@@ -9,13 +9,26 @@ export function Header() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
+    const isMobileOpen = isMobileMenuOpen;
     setIsMobileMenuOpen(false);
-    setTimeout(() => {
+
+    const scrollAction = () => {
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 300);
+    };
+
+    if (isMobileOpen) {
+      setTimeout(scrollAction, 300);
+    } else {
+      scrollAction();
+    }
+  };
+
+  const goToHome = () => {
+    setIsMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openVideoModal = () => {
@@ -59,14 +72,17 @@ export function Header() {
             )}
 
             {/* Logo - centered when menu is open */}
-            <div className={`flex items-center overflow-hidden rounded ${isMobileMenuOpen ? "absolute left-1/2 h-[33px] w-auto -translate-x-1/2" : "h-[33px] w-[42px]"
-              }`}>
+            <button
+              onClick={goToHome}
+              className={`flex items-center overflow-hidden rounded ${isMobileMenuOpen ? "absolute left-1/2 h-[33px] w-auto -translate-x-1/2" : "h-[33px] w-[42px]"
+                }`}
+            >
               <img
                 src={isMobileMenuOpen ? "/assets/logo_hero.png" : "/assets/logo.png"}
                 alt="RecipeForLater"
                 className="h-full w-auto object-contain transition-all duration-300"
               />
-            </div>
+            </button>
 
             {/* Mobile Menu Button - Right */}
             <button
@@ -90,37 +106,36 @@ export function Header() {
         <div className="mx-auto flex items-center justify-center px-[100px] py-5">
           <div className="flex w-full max-w-[580px] items-center justify-center gap-5 rounded-xl bg-white px-3 py-3 shadow-[0px_10px_18px_-2px_rgba(10,9,11,0.07)]">
             {/* Logo */}
-            <div className="flex h-[33px] w-[42px] items-center overflow-hidden rounded">
+            <button
+              onClick={goToHome}
+              className="flex h-[33px] w-[42px] items-center overflow-hidden rounded cursor-pointer transition-transform hover:scale-105"
+            >
               <img src="/assets/minimal_logo.png" alt="RecipeForLater" className="h-full w-full object-contain" />
-            </div>
+            </button>
 
             {/* Divider */}
             <div className="h-[17px] w-px bg-gray-300" />
 
             {/* Navigation */}
             <nav className="flex items-center gap-2">
-              <a
-                href="#home"
+              <button
+                onClick={goToHome}
                 className="rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
               >
                 Home
-              </a>
-              <button className="flex items-center gap-1.5 rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50">
-                Products
-                <ChevronDown className="h-4 w-4" />
               </button>
-              <a
-                href="#pricing"
+              <button
+                onClick={() => scrollToSection('features')}
                 className="rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
               >
-                Pricing
-              </a>
-              <a
-                href="#faq"
+                Features
+              </button>
+              <button
+                onClick={() => scrollToSection('faq')}
                 className="rounded-lg px-2 py-2 font-oswald text-sm font-medium text-[#4f4d55] transition-colors hover:bg-gray-50"
               >
                 FAQ
-              </a>
+              </button>
             </nav>
 
             {/* CTA Buttons */}
@@ -179,15 +194,6 @@ export function Header() {
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.25 }}
-                  onClick={() => scrollToSection('pricing')}
-                  className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
-                >
-                  Pricing
-                </motion.button>
-                <motion.button
-                  initial={{ x: -50, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.3 }}
                   onClick={() => scrollToSection('faq')}
                   className="w-full rounded-2xl bg-[#f7f4e2] px-6 py-4 text-center font-oswald text-2xl font-semibold text-[#0a090b] transition-all hover:bg-[#ebe8d4]"
                 >
