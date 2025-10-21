@@ -37,13 +37,13 @@ export function Footer() {
             className="flex flex-col items-center gap-3 text-center md:flex-row md:gap-8 md:text-left"
           >
             <a
-              href="/privacy"
+              href="/privacy-policy"
               className="font-oswald text-base text-white/70 transition-colors hover:text-white"
             >
               Privacy Policy
             </a>
             <a
-              href="/terms"
+              href="/terms-of-service"
               className="font-oswald text-base text-white/70 transition-colors hover:text-white"
             >
               Terms of Service

@@ -4,7 +4,7 @@ import { type Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
-import { Header } from "./_components/landing/Header";
+import { ConditionalHeader } from "./_components/ConditionalHeader";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://recipeforlater.com'),
@@ -122,7 +122,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
       <body className="flex min-h-screen max-w-full flex-col overflow-x-hidden">
         <TRPCReactProvider>
-          <Header />
+          <ConditionalHeader />
           {children}
         </TRPCReactProvider>
       </body>
