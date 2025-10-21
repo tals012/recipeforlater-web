@@ -344,9 +344,67 @@ Recipe For Later Legal Team
 App City, AP 12345
 United States
 
-## 20. Special Provisions for Recipe Features
+## 20. Auto-Renewable Subscriptions
 
-### 20.1 Smart Shopping List
+### 20.1 Subscription Terms
+
+Recipe For Later offers an auto-renewable subscription that provides access to premium features.
+
+**Subscription Title:** Recipe For Later Premium
+
+**Subscription Length:** 1 month (auto-renewable)
+
+**Subscription Price:** $4.99 USD per month (or equivalent in your local currency)
+
+**Price per Unit:** $4.99 USD per month
+
+### 20.2 Subscription Features
+
+Your subscription includes:
+
+- Unlimited recipe imports and storage
+- AI-powered recipe paraphrasing and clarification
+- Voice-guided cooking instructions
+- Smart shopping list generation
+- Cross-device synchronization
+- Ad-free experience
+- Priority customer support
+
+### 20.3 Payment and Renewal
+
+- Payment will be charged to your Apple ID account at confirmation of purchase
+- Subscription automatically renews unless auto-renew is turned off at least 24 hours before the end of the current period
+- Your account will be charged for renewal within 24 hours prior to the end of the current period
+- You can manage your subscription and turn off auto-renewal by going to your Account Settings after purchase
+- Any unused portion of a free trial period, if offered, will be forfeited when you purchase a subscription
+
+### 20.4 Free Trial
+
+If a free trial is offered:
+
+- The free trial period lasts for 7 days
+- You can cancel anytime during the free trial period without being charged
+- If you do not cancel before the trial ends, you will be automatically charged the subscription fee
+- To cancel, go to your device's subscription settings at least 24 hours before the trial ends
+
+### 20.5 Cancellation
+
+- You can cancel your subscription at any time through your Apple ID Account Settings
+- Cancellation takes effect at the end of the current billing period
+- You will continue to have access to premium features until the end of your current billing period
+- No refunds will be provided for the unused portion of any subscription period
+
+### 20.6 Price Changes
+
+We reserve the right to change subscription prices at any time. If we increase the price of your subscription, we will notify you at least 30 days in advance. The new price will apply to your next billing cycle after the notice period, and you will have the opportunity to cancel your subscription before the new price takes effect.
+
+### 20.7 Subscription Restoration
+
+If you previously purchased a subscription and reinstall the app or use it on a different device, you can restore your subscription at no additional cost by logging in with the same Apple ID.
+
+## 21. Special Provisions for Recipe Features
+
+### 21.1 Smart Shopping List
 
 The smart shopping list feature organizes ingredients from your saved recipes into categories. You acknowledge that:
 

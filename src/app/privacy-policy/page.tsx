@@ -383,7 +383,59 @@ The information provided in our Google Play Data Safety Form accurately reflects
 
 Our App Store Privacy Nutrition Labels accurately reflect the data we collect and how we use it, as described in this Privacy Policy.
 
-## 20. Glossary of Terms
+## 20. Subscription and Payment Information
+
+### 20.1 Auto-Renewable Subscription
+
+Recipe For Later offers an auto-renewable subscription that provides access to premium features.
+
+**Subscription Title:** Recipe For Later Premium
+
+**Subscription Length:** 1 month (auto-renewable)
+
+**Subscription Price:** $4.99 USD per month (or equivalent in your local currency)
+
+**Price per Unit:** $4.99 USD per month
+
+### 20.2 Payment Processing
+
+- Payment is processed through your Apple ID account
+- We do not store your payment information
+- Apple processes all payments according to their privacy policy
+- Your payment information is subject to Apple's data protection standards
+
+### 20.3 Subscription Data
+
+When you subscribe, we collect:
+
+- Subscription status (active, expired, cancelled)
+- Subscription start and end dates
+- Purchase receipts for verification purposes
+
+This information is used solely to:
+
+- Provide you with access to premium features
+- Verify your subscription status
+- Process refunds or billing inquiries
+- Improve our subscription offerings
+
+### 20.4 Data Retention for Subscriptions
+
+- Active subscription data is retained for the duration of your subscription
+- After cancellation, subscription data is retained for 90 days for billing purposes
+- Purchase receipts may be retained longer for tax and accounting compliance
+
+### 20.5 Your Rights Regarding Subscription Data
+
+You have the right to:
+
+- Access your subscription information through the App
+- Request deletion of subscription data after cancellation (subject to legal retention requirements)
+- Export your subscription history
+
+For subscription-related privacy inquiries, contact us at privacy@recipeforlater.com
+
+## 21. Glossary of Terms
 
 - **API (Application Programming Interface):** A set of rules that allows one software application to interact with another.
 - **CCPA (California Consumer Privacy Act):** A state statute intended to enhance privacy rights and consumer protection for residents of California.
