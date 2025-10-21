@@ -49,6 +49,20 @@ const tabs = [
     ],
   },
   {
+    id: "allergies",
+    title: "Allergy Detection & Alerts",
+    features: [
+      "Automatic detection of common allergens in recipes",
+      "Visual alerts for ingredients you're allergic to",
+      "Smart ingredient substitution suggestions",
+      "Track multiple allergies for family members",
+      "Filter recipes by allergen-free options",
+    ],
+    description:
+      "Stay safe in the kitchen with intelligent allergy detection. Our AI scans every recipe for allergens and highlights them instantly, helping you cook confidently for yourself and your loved ones.",
+    tagline: "Cook safely",
+  },
+  {
     id: "story",
     title: "Story Mode",
     features: [
@@ -368,6 +382,22 @@ export function FeatureTabs() {
                 </motion.div>
               )}
 
+              {tabs[activeTab]?.id === "allergies" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
+                >
+                  <p className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
+                    Never worry about hidden allergens again.
+                  </p>
+                  <p className="font-oswald text-base leading-[1.6] text-[#4f4d55]">
+                    Set your allergies once, and the system will automatically scan and highlight problematic ingredients in every recipe you view.
+                  </p>
+                </motion.div>
+              )}
+
               {tabs[activeTab]?.id === "story" && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -433,6 +463,12 @@ export function FeatureTabs() {
                   <img
                     src="/assets/shared.png"
                     alt="Share Collections"
+                    className="h-auto w-full max-w-[500px] object-contain"
+                  />
+                ) : tabs[activeTab]?.id === "allergies" ? (
+                  <img
+                    src="/assets/allegr.png"
+                    alt="Allergy Detection & Alerts"
                     className="h-auto w-full max-w-[500px] object-contain"
                   />
                 ) : tabs[activeTab]?.id === "story" ? (
