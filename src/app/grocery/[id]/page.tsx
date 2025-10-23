@@ -175,8 +175,8 @@ function GroceryContent() {
                             </h3>
                             <ul className="space-y-2">
                                 {groceryList.items.slice(0, 10).map((item) => (
-                                    <li 
-                                        key={item.id} 
+                                    <li
+                                        key={item.id}
                                         className="flex items-center gap-3 rounded-lg bg-white px-3 py-2"
                                     >
                                         <div className={`h-4 w-4 rounded border-2 ${item.isChecked ? 'border-[#177654] bg-[#177654]' : 'border-[#7f7d83]'}`}>
