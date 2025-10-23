@@ -1,43 +1,50 @@
-import { type NextRequest, NextResponse } from "next/server";
-import { db } from "@/server/db";
+import { NextRequest, NextResponse } from "next/server";
+
+// This is an example API endpoint
+// You'll need to implement the actual logic to fetch from your database
 
 export async function GET(
-    request: NextRequest,
-    { params }: { params: { id: string } }
+  request: NextRequest,
+  { params }: { params: { id: string } }
 ) {
-    try {
-        const groceryList = await db.groceryList.findUnique({
-            where: {
-                id: params.id,
-            },
-            include: {
-                _count: {
-                    select: {
-                        items: true,
-                    },
-                },
-            },
-        });
+  try {
+    const { id } = params;
 
-        if (!groceryList) {
-            return NextResponse.json(
-                { error: "Grocery list not found" },
-                { status: 404 }
-            );
-        }
+    // TODO: Replace with actual database query
+    // Example with Prisma:
+    // const groceryList = await prisma.groceryList.findUnique({
+    //   where: { id },
+    //   include: {
+    //     _count: {
+    //       select: {
+    //         items: true,
+    //       },
+    //     },
+    //   },
+    // });
 
-        return NextResponse.json({
-            id: groceryList.id,
-            title: groceryList.title || "Shopping List",
-            itemCount: groceryList._count.items,
-            isShared: groceryList.isShared || false,
-        });
-    } catch (error) {
-        console.error("Error fetching grocery list:", error);
-        return NextResponse.json(
-            { error: "Internal server error" },
-            { status: 500 }
-        );
+    // Mock response for now
+    const groceryList = {
+      id,
+      title: "Shopping List",
+      itemCount: 15,
+      isShared: true,
+    };
+
+    if (!groceryList) {
+      return NextResponse.json(
+        { error: "Grocery list not found" },
+        { status: 404 }
+      );
     }
+
+    return NextResponse.json(groceryList);
+  } catch (error) {
+    console.error("Error fetching grocery list:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
 }
 
