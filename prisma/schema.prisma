@@ -18,3 +18,26 @@ model Post {
 
     @@index([name])
 }
+
+model GroceryList {
+    id        String        @id @default(cuid())
+    title     String?
+    isShared  Boolean       @default(false)
+    createdAt DateTime      @default(now())
+    updatedAt DateTime      @updatedAt
+    items     GroceryItem[]
+
+    @@index([id])
+}
+
+model GroceryItem {
+    id            String      @id @default(cuid())
+    name          String
+    checked       Boolean     @default(false)
+    groceryList   GroceryList @relation(fields: [groceryListId], references: [id], onDelete: Cascade)
+    groceryListId String
+    createdAt     DateTime    @default(now())
+    updatedAt     DateTime    @updatedAt
+
+    @@index([groceryListId])
+}

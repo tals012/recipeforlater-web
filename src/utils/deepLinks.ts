@@ -40,6 +40,11 @@ export const generateCollectionLink = (collectionId: string, invite?: boolean) =
   return generateDeepLink(`collection/${collectionId}`, params);
 };
 
+export const generateGroceryLink = (groceryId: string, invite?: boolean) => {
+  const params = invite ? { invite: "true" } : undefined;
+  return generateDeepLink(`grocery/${groceryId}`, params);
+};
+
 export const generateResetPasswordLink = (token: string, email: string) => {
   return generateDeepLink("auth/reset-password", { token, email });
 };
