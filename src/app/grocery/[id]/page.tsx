@@ -5,11 +5,22 @@ import { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShoppingCart, Users as UsersIcon } from "lucide-react";
 
+interface GroceryItem {
+    id: string;
+    name: string;
+    quantity?: string;
+    notes?: string;
+    isChecked: boolean;
+    aisle?: string;
+    createdAt: string;
+}
+
 interface GroceryList {
     id: string;
     title: string;
     itemCount?: number;
     isShared?: boolean;
+    items?: GroceryItem[];
 }
 
 const getGroceryList = async (id: string): Promise<GroceryList> => {
@@ -147,12 +158,46 @@ function GroceryContent() {
                     )}
 
                     {/* List Info */}
-                    {groceryList.itemCount && (
+                    {groceryList.itemCount !== undefined && groceryList.itemCount > 0 && (
                         <div className="mb-8 flex items-center gap-2">
                             <ShoppingCart className="h-5 w-5 text-[#7f7d83]" />
                             <p className="font-oswald text-base text-[#7f7d83]">
                                 {groceryList.itemCount} {groceryList.itemCount === 1 ? 'item' : 'items'}
                             </p>
+                        </div>
+                    )}
+
+                    {/* Items Preview */}
+                    {groceryList.items && groceryList.items.length > 0 && (
+                        <div className="mb-8 rounded-xl bg-[#f7f4e2] p-4">
+                            <h3 className="mb-3 font-oswald text-lg font-semibold text-[#0a090b]">
+                                Items in this list:
+                            </h3>
+                            <ul className="space-y-2">
+                                {groceryList.items.slice(0, 10).map((item) => (
+                                    <li 
+                                        key={item.id} 
+                                        className="flex items-center gap-3 rounded-lg bg-white px-3 py-2"
+                                    >
+                                        <div className={`h-4 w-4 rounded border-2 ${item.isChecked ? 'border-[#177654] bg-[#177654]' : 'border-[#7f7d83]'}`}>
+                                            {item.isChecked && (
+                                                <svg className="h-full w-full text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            )}
+                                        </div>
+                                        <span className={`font-oswald text-base ${item.isChecked ? 'text-[#7f7d83] line-through' : 'text-[#0a090b]'}`}>
+                                            {item.name}
+                                            {item.quantity && ` (${item.quantity})`}
+                                        </span>
+                                    </li>
+                                ))}
+                                {groceryList.items.length > 10 && (
+                                    <li className="pt-2 text-center font-oswald text-sm text-[#7f7d83]">
+                                        +{groceryList.items.length - 10} more items
+                                    </li>
+                                )}
+                            </ul>
                         </div>
                     )}
 

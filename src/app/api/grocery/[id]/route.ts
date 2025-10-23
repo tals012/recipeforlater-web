@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-
-// This is an example API endpoint
-// You'll need to implement the actual logic to fetch from your database
+import { env } from "@/env";
 
 export async function GET(
   request: NextRequest,
@@ -10,35 +8,42 @@ export async function GET(
   try {
     const { id } = params;
 
-    // TODO: Replace with actual database query
-    // Example with Prisma:
-    // const groceryList = await prisma.groceryList.findUnique({
-    //   where: { id },
-    //   include: {
-    //     _count: {
-    //       select: {
-    //         items: true,
-    //       },
-    //     },
-    //   },
-    // });
+    // Fetch from backend API
+    const response = await fetch(
+      `${env.BACKEND_API_URL}/api/grocery-lists/public/${id}`,
+      {
+        headers: {
+          "X-API-Key": env.WEBSITE_API_KEY,
+        },
+        cache: "no-store",
+      }
+    );
 
-    // Mock response for now
-    const groceryList = {
-      id,
-      title: "Shopping List",
-      itemCount: 15,
-      isShared: true,
-    };
-
-    if (!groceryList) {
+    if (!response.ok) {
       return NextResponse.json(
         { error: "Grocery list not found" },
         { status: 404 }
       );
     }
 
-    return NextResponse.json(groceryList);
+    const data = await response.json();
+
+    if (!data.success) {
+      return NextResponse.json(
+        { error: "Failed to fetch grocery list" },
+        { status: 500 }
+      );
+    }
+
+    const groceryList = data.data;
+
+    return NextResponse.json({
+      id: groceryList.id,
+      title: groceryList.name,
+      itemCount: groceryList.items?.length || 0,
+      isShared: true,
+      items: groceryList.items,
+    });
   } catch (error) {
     console.error("Error fetching grocery list:", error);
     return NextResponse.json(
